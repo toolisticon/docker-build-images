@@ -1,0 +1,23 @@
+{
+    "builders": [{
+        "type": "docker",
+        "image": "buildpack-deps:stretch",
+        "commit": true,
+        "changes": [
+            "VOLUME /data",
+            "WORKDIR /data"
+        ]
+    }],
+    "provisioners":[{
+        "type": "ansible",
+        "user": "root",
+        "playbook_file": "ansible/playbook.yml",
+        "extra_arguments": [ "-v" ]
+      }
+    ],
+    "post-processors": [[ {
+        "type": "docker-tag",
+        "repository": "toolisticon/java-builder",
+        "tag": "latest"
+    } ]]
+}
