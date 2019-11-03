@@ -1,0 +1,9 @@
+---
+- name: Remove artifacts
+  raw: apt-get autoremove -y
+
+- name: Remove cache
+  raw: apt-get clean
+
+- name: Remove apt lists
+  raw: rm -rf /var/lib/apt/lists/* && rm -rf /root/.cache

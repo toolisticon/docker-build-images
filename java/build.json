@@ -2,10 +2,11 @@
     "builders": [{
         "type": "docker",
         "image": "buildpack-deps:stretch",
-        "commit": true,
+        "commit": false,
         "changes": [
             "VOLUME /data",
-            "WORKDIR /data"
+            "WORKDIR /data",
+            "ENTRYPOINT /bin/bash"
         ]
     }],
     "provisioners":[{

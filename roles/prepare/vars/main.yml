@@ -1,0 +1,10 @@
+---
+common_packages:
+- "dumb-init"
+- "curl"
+- "ca-certificates"
+- "htop"
+- "rsync"
+- "vim"
+- "sudo"
+- "unzip"
