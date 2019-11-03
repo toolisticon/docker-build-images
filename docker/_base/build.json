@@ -2,6 +2,7 @@
     "builders": [{
         "type": "docker",
         "image": "buildpack-deps:stretch",
+        "pull": true,
         "commit": true,
         "changes": [
             "VOLUME /data",
@@ -18,7 +19,7 @@
     ],
     "post-processors": [[ {
         "type": "docker-tag",
-        "repository": "toolisticon/ansible-builder",
+        "repository": "toolisticon/base-builder-image",
         "tag": "latest"
     } ]]
 }
