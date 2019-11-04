@@ -1,4 +1,8 @@
 ---
+- name: Update APT cache
+  apt:
+    update_cache: yes
+
 - name: Boostrap python
   raw: test -e /usr/bin/python || (apt-get -y update && apt-get install -y python-minimal)
 
