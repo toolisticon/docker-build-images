@@ -1,6 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
-CURRENT_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )
+# return error code
+set -e
 
 function prepareTestImage {
   docker run -td --name "test-$1" "toolisticon/$1"
@@ -14,9 +15,9 @@ function removeTestImage {
 function runJavaImageTests {
   removeTestImage $1 2>/dev/null || true
   prepareTestImage "$1"
-  docker cp "$CURRENT_DIR/test-utils/SSLPoke.java" "test-$1":/tmp/
-  docker exec "test-$1" bash -c "cd /tmp && javac SSLPoke.java"
-  docker exec "test-$1" bash -c "cd /tmp && java SSLPoke google.de 443"
+  docker cp "bin/test-utils/SSLPoke.java" "test-$1":/tmp/
+  docker exec "test-$1" bash -ce "cd /tmp && javac SSLPoke.java"
+  docker exec "test-$1" bash -ce "cd /tmp && java SSLPoke google.de 443"
   removeTestImage $1
 }
 

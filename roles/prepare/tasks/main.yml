@@ -9,3 +9,5 @@
 - name: install common packages
   apt: name={{ item }} state=present
   with_items: "{{ common_packages }}"
+
+- raw: apt-get update && apt-get upgrade
