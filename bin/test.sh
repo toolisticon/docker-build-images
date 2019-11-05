@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+CURRENT_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )
 
 function prepareTestImage {
   docker run -td --name "test-$1" "toolisticon/$1"
