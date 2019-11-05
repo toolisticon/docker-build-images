@@ -1,0 +1,8 @@
+---
+- name: Provision | Setup Image
+  hosts: all
+  vars:
+    - java_version: 13
+  roles:
+    - { role: srsp.oracle-java, tags: [ 'build' ]}
+    - { role: ../../roles/cleanup, tags: [ 'ansible' ], become: yes }

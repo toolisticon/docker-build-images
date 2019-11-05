@@ -1,0 +1,25 @@
+{
+    "builders": [{
+        "type": "docker",
+        "image": "buildpack-deps:stretch",
+        "pull": true,
+        "commit": true,
+        "changes": [
+            "VOLUME /data",
+            "WORKDIR /data",
+            "ENTRYPOINT /bin/bash"
+        ]
+    }],
+    "provisioners":[{
+        "type": "ansible",
+        "user": "root",
+        "playbook_file": "ansible/playbook.yml",
+        "extra_arguments": [ "-v" ]
+      }
+    ],
+    "post-processors": [[ {
+        "type": "docker-tag",
+        "repository": "toolisticon/base-builder-image",
+        "tag": "latest"
+    } ]]
+}

@@ -1,0 +1,8 @@
+---
+
+- name: Prepare | Setup Ansible runtime
+  hosts: all
+  roles:
+    - { role: ../../roles/prepare, tags: [ 'ansible' ], become: yes }
+    - { role: pixelart.chrome, tags: [ 'build' ]}
+    - { role: geerlingguy.docker, tags: [ 'docker' ], ignore_errors: true } # ignore_errors can be removed after https://
