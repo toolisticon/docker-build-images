@@ -12,7 +12,7 @@
     {
       "type": "ansible",
       "user": "root",
-      "playbook_file": "ansible/playbook.yml",
+      "playbook_file": "ansible/oraclejdk13.yml",
       "extra_arguments": ["-v"]
     }
   ],
@@ -20,7 +20,7 @@
     [
       {
         "type": "docker-tag",
-        "repository": "toolisticon/java-builder",
+        "repository": "toolisticon/oraclejdk13-builder",
         "tag": "latest"
       }
     ]

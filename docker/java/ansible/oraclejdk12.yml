@@ -1,8 +1,8 @@
 ---
 - name: Provision | Setup Image
   hosts: all
-  vars_files:
-    - vars/main.yml
+  vars:
+    - java_version: 12
   roles:
-    - { role: geerlingguy.java, tags: [ 'build' ]}
+    - { role: srsp.oracle-java, tags: [ 'build' ]}
     - { role: ../../roles/cleanup, tags: [ 'ansible' ], become: yes }

@@ -1,0 +1,15 @@
+---
+- name: Provision | Setup Image
+  hosts: all
+  vars:
+    - java_package: openjdk-11-jdk
+  pre_tasks:
+    - name: add backports repository
+      apt_repository: repo='deb http://http.debian.net/debian {{ ansible_distribution_release }}-backports main contrib non-free' state=present update_cache=yes
+    - name: Install JDK
+      apt:
+        name: "{{ java_package }}"
+        state: latest
+        default_release: "{{ ansible_distribution_release }}-backports"
+  roles:
+    - { role: ../../roles/cleanup, tags: [ 'ansible' ], become: yes }
