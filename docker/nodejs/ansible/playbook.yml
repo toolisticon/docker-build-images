@@ -5,4 +5,5 @@
     - vars/main.yml
   roles:
     - { role: geerlingguy.nodejs, tags: [ 'nodejs' ], become: yes }
+    - { role: stephdewit.nvm, tags: [ 'nodejs' ], become: yes }
     - { role: ../../roles/cleanup, tags: [ 'ansible' ], become: yes }
