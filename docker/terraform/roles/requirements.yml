@@ -1,0 +1,6 @@
+---
+- src: geerlingguy.pip
+  version: "1.3.0"
+
+- src: migibert.terraform
+  version: "1.4.0"

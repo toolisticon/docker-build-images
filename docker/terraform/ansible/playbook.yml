@@ -4,6 +4,6 @@
   vars_files:
     - vars/main.yml
   roles:
-    - { role: geerlingguy.nodejs, tags: [ 'nodejs' ], become: yes }
-    - { role: stephdewit.nvm, tags: [ 'nodejs' ], become: yes }
+    - { role: geerlingguy.pip, tags: [ 'build' ]}
+    - { role: migibert.terraform, tags: [ 'build' ]}
     - { role: ../../roles/cleanup, tags: [ 'ansible' ], become: yes }
