@@ -1,4 +1,19 @@
-# [.2.0](https://github.com/toolisticon/docker-build-images/compare/v0.2.0...v.2.0) (2019-11-05)
+# [0.3.0](https://github.com/toolisticon/docker-build-images/compare/v0.2.1...v0.3.0) (2019-11-06)
+
+
+### Bug Fixes
+
+* **Build:** Use APT module to omit loop ([e227c02](https://github.com/toolisticon/docker-build-images/commit/e227c02))
+
+
+### Features
+
+* **NVM:** Adding nvm to nodejs image ([f84764b](https://github.com/toolisticon/docker-build-images/commit/f84764b)), closes [#3](https://github.com/toolisticon/docker-build-images/issues/3)
+* **Terraform:** Adding terraform builder image ([aba1320](https://github.com/toolisticon/docker-build-images/commit/aba1320))
+
+
+
+## [0.2.1](https://github.com/toolisticon/docker-build-images/compare/v0.2.0...v0.2.1) (2019-11-05)
 
 
 ### Bug Fixes
