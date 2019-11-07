@@ -4,26 +4,77 @@
 set -e
 
 function prepareTestImage {
-  docker run -td --name "test-$1" "toolisticon/$1"
+  docker run -td --name "$2" "toolisticon/$1"
 }
 
 function removeTestImage {
-  docker stop "test-$1"
-  docker rm "test-$1"
+  docker stop "$1"
+  docker rm "$1"
 }
 
-function runJavaImageTests {
-  removeTestImage $1 2>/dev/null || true
-  prepareTestImage "$1"
-  docker cp "bin/test-utils/SSLPoke.java" "test-$1":/tmp/
-  docker exec "test-$1" bash -ce "cd /tmp && javac SSLPoke.java"
-  docker exec "test-$1" bash -ce "cd /tmp && java SSLPoke google.de 443"
-  removeTestImage $1
+function runJavaImageTests() {
+  local image=$1
+  local name=$(echo "$image" | sed 's/\//_/' | sed 's/:.*//')
+  local testName="test-$name"
+  echo "Starting test image $image"
+  removeTestImage "$testName" 2>/dev/null || true
+  prepareTestImage "$image" "$testName"
+  docker cp "bin/test-utils/SSLPoke.java" "$testName":/tmp/
+  docker exec "$testName" bash -ce "cd /tmp && javac SSLPoke.java"
+  docker exec "$testName" bash -ce "cd /tmp && java SSLPoke google.de 443"
+  removeTestImage $testName
+  echo "Finished test image $image"
+  echo ""
+}
+
+function runAnsibleTests() {
+  local image=$1
+  local name=$(echo "$image" | sed 's/\//_/' | sed 's/:.*//')
+  local testName="test-$name"
+  echo "Starting test image $image"
+  removeTestImage "$testName" 2>/dev/null || true
+  prepareTestImage "$image" "$testName"
+  docker exec "$testName" bash -ce "ansible --version"
+  removeTestImage $testName
+  echo "Finished test image $image"
+  echo ""
+}
+
+function runTerraformTests() {
+  local image=$1
+  local name=$(echo "$image" | sed 's/\//_/' | sed 's/:.*//')
+  local testName="test-$name"
+  echo "Starting test image $image"
+  removeTestImage "$testName" 2>/dev/null || true
+  prepareTestImage "$image" "$testName"
+  docker exec "$testName" bash -ce "ansible --version"
+  docker exec "$testName" bash -ce "terraform --version"
+  removeTestImage $testName
+  echo "Finished test image $image"
+  echo ""
+}
+
+function runNodeJSTests() {
+  local image=$1
+  local name=$(echo "$image" | sed 's/\//_/' | sed 's/:.*//')
+  local testName="test-$name"
+  echo "Starting test image $image"
+  removeTestImage "$testName" 2>/dev/null || true
+  prepareTestImage "$image" "$testName"
+  docker exec "$testName" bash -ce "node --version"
+  docker exec "$testName" bash -ce "npm --version"
+  docker exec "$testName" bash -ce "source ~/.nvm/nvm.sh && nvm --version"
+  removeTestImage $testName
+  echo "Finished test image $image"
+  echo ""
 }
 
 # TODO more test
 
+runAnsibleTests 'ansible-builder'
+runTerraformTests 'terraform-builder'
 runJavaImageTests 'openjdk8-builder'
 runJavaImageTests 'openjdk11-builder'
 runJavaImageTests 'oraclejdk12-builder'
 runJavaImageTests 'oraclejdk13-builder'
+runNodeJSTests 'nodejs-builder'
