@@ -1,0 +1,71 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    name: Test on node ${{ matrix.python_version }} and ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python_version: [2.7, 3.5, 3.6, 3.7]
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Set up packer
+      run: |
+        wget https://releases.hashicorp.com/packer/1.4.5/packer_1.4.5_linux_amd64.zip
+        unzip packer_1.4.5_linux_amd64.zip
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Build Images
+      run: |
+        export PATH=$PATH:$(pwd)
+        ./bin/build.sh
+
+    - name: Test Images
+      run: |
+        export PATH=$PATH:$(pwd)
+        ./bin/test.sh
+
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Set up packer
+        run: |
+          wget https://releases.hashicorp.com/packer/1.4.5/packer_1.4.5_linux_amd64.zip
+          unzip packer_1.4.5_linux_amd64.zip
+
+      - uses: azure/docker-login@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          email: 'oss@holisticon.de'
+
+      - name: Build and Deploy Release Images
+        run: |
+          export PATH=$PATH:$(pwd)
+          ./bin/build.sh
+          ./bin/deploy.sh
+        if: github.ref == 'master'
+
+      - name: Build and Deploy Snaphot Images
+        run: |
+          export TIMESTAMP=$(date +%s)
+          export PATH=$PATH:$(pwd)
+          ./bin/build.sh $TIMESTAMP
+          ./bin/deploy.sh $TIMESTAMP
+        if: github.ref == 'develop'
