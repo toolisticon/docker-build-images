@@ -1,3 +1,13 @@
+# [0.4.0](https://github.com/toolisticon/docker-build-images/compare/v0.3.0...v0.4.0) (2019-11-11)
+
+
+### Features
+
+* **Build:** Adding GitHub Actions build ([46f46ac](https://github.com/toolisticon/docker-build-images/commit/46f46ac))
+* **k8s:** Adding kubectl to base image ([b35274d](https://github.com/toolisticon/docker-build-images/commit/b35274d))
+
+
+
 # [0.3.0](https://github.com/toolisticon/docker-build-images/compare/v0.2.1...v0.3.0) (2019-11-06)
 
 
@@ -9,7 +19,7 @@
 ### Features
 
 * **NVM:** Adding nvm to nodejs image ([f84764b](https://github.com/toolisticon/docker-build-images/commit/f84764b)), closes [#3](https://github.com/toolisticon/docker-build-images/issues/3)
-* **Terraform:** Adding terraform builder image ([aba1320](https://github.com/toolisticon/docker-build-images/commit/aba1320))
+* **Terraform:** Adding terraform builder image ([23e6879](https://github.com/toolisticon/docker-build-images/commit/23e6879))
 
 
 
@@ -56,3 +66,6 @@
 ### Features
 
 * **Docker:** Initial commit ([52d0d5d](https://github.com/toolisticon/docker-build-images/commit/52d0d5d))
+
+
+
