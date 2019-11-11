@@ -1,4 +1,7 @@
 {
+  "variables": {
+    "image_tag": "{{env `IMAGE_TAG`}}"
+  },
   "builders": [
     {
       "type": "docker",
@@ -21,7 +24,7 @@
       {
         "type": "docker-tag",
         "repository": "toolisticon/openjdk11-builder",
-        "tag": "latest"
+        "tag": "{{user `image_tag`}}"
       }
     ]
   ]
