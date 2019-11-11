@@ -31,12 +31,12 @@ jobs:
     - name: Build Images
       run: |
         export PATH=$PATH:$(pwd)
-        ./bin/build.sh
+        ./.bin/build.sh
 
     - name: Test Images
       run: |
         export PATH=$PATH:$(pwd)
-        ./bin/test.sh
+        ./.bin/test.sh
 
   deploy:
     needs: [build]
@@ -58,14 +58,14 @@ jobs:
       - name: Build and Deploy Release Images
         run: |
           export PATH=$PATH:$(pwd)
-          ./bin/build.sh
-          ./bin/deploy.sh
+          ./.bin/build.sh
+          ./.bin/deploy.sh
         if: github.ref == 'master'
 
       - name: Build and Deploy Snaphot Images
         run: |
           export TIMESTAMP=$(date +%s)
           export PATH=$PATH:$(pwd)
-          ./bin/build.sh $TIMESTAMP
-          ./bin/deploy.sh $TIMESTAMP
+          ./.bin/build.sh $TIMESTAMP
+          ./.bin/deploy.sh $TIMESTAMP
         if: github.ref == 'develop'

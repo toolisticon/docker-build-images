@@ -33,7 +33,7 @@ Please follow these basic steps to simplify pull request reviews - if you don't 
 
 * Please rebase your branch against the current develop, use the **develop** for pull requests
 * Please ensure that the test suite passes **and** that code is lint free before submitting a PR by running:
- * ```./bin/build.sh && ./bin/test.sh```
+ * ```./.bin/build.sh && ./.bin/test.sh```
 * If you've added new functionality, **please** include tests which validate its behaviour
 * Make reference to possible [issues](https://github.com/ContinuousSecurityTooling/zap-java/issues) on PR comment
 
@@ -43,6 +43,12 @@ To ensure consistency throughout the source code, keep these rules in mind as yo
 
 * All features or bug fixes **must be tested** by one or more [specs][unit-testing].
 * All public API methods **must be documented** with jsdoc.
+
+Tools:
+* Packer
+* Ansible
+* NodeJS 12+
+  * `npm install -g conventional-changelog-cli`
 
 ## <a name="commit"></a> Git Commit Guidelines
 
