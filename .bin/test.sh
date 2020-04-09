@@ -19,7 +19,7 @@ function runJavaImageTests() {
   echo "Starting test image $image"
   removeTestImage "$testName" 2>/dev/null || true
   prepareTestImage "$image" "$testName"
-  docker cp "bin/test-utils/SSLPoke.java" "$testName":/tmp/
+  docker cp ".bin/test-utils/SSLPoke.java" "$testName":/tmp/
   docker exec "$testName" bash -ce "cd /tmp && javac SSLPoke.java"
   docker exec "$testName" bash -ce "cd /tmp && java SSLPoke google.de 443"
   removeTestImage $testName
