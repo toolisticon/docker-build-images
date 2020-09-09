@@ -9,5 +9,6 @@ common_packages:
 - "vim"
 - "sudo"
 - "unzip"
-- "python-pip"
+- "python3-pip"
 - "nodejs"
+- "wget"
