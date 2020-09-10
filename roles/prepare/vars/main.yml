@@ -12,3 +12,11 @@ common_packages:
 - "python3-pip"
 - "nodejs"
 - "wget"
+- "google-cloud-sdk"
+- "git-secret"
+apt_keys:
+- "https://api.bintray.com/users/sobolevn/keys/gpg/public.key"
+- "https://packages.cloud.google.com/apt/doc/apt-key.gpg"
+apt_repos:
+- "deb http://packages.cloud.google.com/apt cloud-sdk main"
+- "deb https://dl.bintray.com/sobolevn/deb git-secret main"
