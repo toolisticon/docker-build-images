@@ -1,4 +1,19 @@
 ---
+- name: Install apt-transport-https
+  apt: name=apt-transport-https state=present
+
+- name: Adding APT Keys
+  apt_key:
+    url: "{{ item }}"
+    state: present
+  with_items: '{{ apt_keys }}'
+
+- name: Adding APT Repos
+  apt_repository:
+    repo: "{{ item }}"
+    state: present
+  with_items: '{{ apt_repos }}'
+
 - name: Update first
   apt:
     update_cache: true
@@ -7,11 +22,12 @@
 - name: Boostrap python
   raw: test -e /usr/bin/python || (apt-get -y update && apt-get install -y python-minimal)
 
-- name: install common packages
+- name: Install common packages
   apt: name={{ item }} state=present
   with_items: '{{ common_packages }}'
 
+- name: Install NodeJS
+  raw: curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&  apt-get install -y nodejs
+
 - name: Boostrap kubectl
   raw: curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && chmod +x ./kubectl && mv ./kubectl /usr/local/bin/kubectl
-- name: GCloud CLI
-  raw: echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg  add - && apt-get update -y && apt-get install google-cloud-sdk -y

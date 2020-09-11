@@ -8,7 +8,7 @@ Various Docker Images for Building NodeJS, Java and Ansible artifacts
 * Terraform: [![Docker Pulls](https://img.shields.io/docker/pulls/toolisticon/terraform-builder.svg)](https://hub.docker.com/r/toolisticon/terraform-builder)
 * Java:
   * OpenJDK 8: [![Docker Pulls](https://img.shields.io/docker/pulls/toolisticon/openjdk8-builder.svg)](https://hub.docker.com/r/toolisticon/openjdk8-builder)
-  * OpenJDK 11: [![Docker Pulls](https://img.shields.io/docker/pulls/toolisticon/openjdk11.svg)](https://hub.docker.com/r/toolisticon/openjdk11-builder)
+  * OpenJDK 11: [![Docker Pulls](https://img.shields.io/docker/pulls/toolisticon/openjdk11-builder.svg)](https://hub.docker.com/r/toolisticon/openjdk11-builder)
   * OracleJDK 12: [![Docker Pulls](https://img.shields.io/docker/pulls/toolisticon/oraclejdk12-builder.svg)](https://hub.docker.com/r/toolisticon/oraclejdk12-builder)
   * OracleJDK 13: [![Docker Pulls](https://img.shields.io/docker/pulls/toolisticon/oraclejdk13-builder.svg)](https://hub.docker.com/r/toolisticon/oraclejdk13-builder)
 * NodeJS: [![Docker Pulls](https://img.shields.io/docker/pulls/toolisticon/nodejs-builder.svg)](https://hub.docker.com/r/toolisticon/nodejs-builder)
@@ -27,8 +27,11 @@ All images share common base:
 * Chrome
 * Docker
 * Common tools:
+  * wget
+  * [Git Secret](https://git-secret.io)
   * rsync
   * curl
+  * nodejs/npm
 
 ## Tools used
 
