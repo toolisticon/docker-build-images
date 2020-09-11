@@ -10,7 +10,6 @@ common_packages:
 - "sudo"
 - "unzip"
 - "python3-pip"
-- "nodejs"
 - "wget"
 - "google-cloud-sdk"
 - "git-secret"

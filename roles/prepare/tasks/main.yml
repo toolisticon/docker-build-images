@@ -1,5 +1,5 @@
 ---
-- name: install common packages
+- name: Install apt-transport-https
   apt: name=apt-transport-https state=present
 
 - name: Adding APT Keys
@@ -22,9 +22,12 @@
 - name: Boostrap python
   raw: test -e /usr/bin/python || (apt-get -y update && apt-get install -y python-minimal)
 
-- name: install common packages
+- name: Install common packages
   apt: name={{ item }} state=present
   with_items: '{{ common_packages }}'
+
+- name: Install NodeJS
+  raw: curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&  apt-get install -y nodejs
 
 - name: Boostrap kubectl
   raw: curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && chmod +x ./kubectl && mv ./kubectl /usr/local/bin/kubectl
