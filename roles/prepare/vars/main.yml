@@ -13,6 +13,7 @@ common_packages:
 - "wget"
 - "google-cloud-sdk"
 - "git-secret"
+- "libxss1"
 apt_keys:
 - "https://api.bintray.com/users/sobolevn/keys/gpg/public.key"
 - "https://packages.cloud.google.com/apt/doc/apt-key.gpg"
