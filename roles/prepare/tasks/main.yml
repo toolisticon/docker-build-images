@@ -19,12 +19,11 @@
     update_cache: true
     upgrade: true
 
-- name: Boostrap python
-  raw: test -e /usr/bin/python || (apt-get -y update && apt-get install -y python-minimal)
+- name: Bootstrap python
+  raw: test -e /usr/bin/python || (apt-get -y update && apt-get install -y python3 && update-alternatives --install /usr/bin/python python /usr/bin/python3 1)
 
 - name: Install common packages
-  apt: name={{ item }} state=present
-  with_items: '{{ common_packages }}'
+  apt: name={{ common_packages }} state=present
 
 - name: Install NodeJS
   raw: curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&  apt-get install -y nodejs
