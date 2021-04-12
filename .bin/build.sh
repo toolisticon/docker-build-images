@@ -18,13 +18,9 @@ prepareImage "docker/terraform"
 prepareImage "docker/java"
 prepareImage "docker/nodejs"
 
-# build common base
-buildImage "docker/_base" "build.json"
-
 # build other images in parallel
 buildImage "docker/ansible" "build.json" &
 buildImage "docker/terraform" "build.json" &
-buildImage "docker/java" "openjdk8.json" &
 buildImage "docker/java" "openjdk11.json" &
 buildImage "docker/java" "oraclejdk12.json" &
 buildImage "docker/java" "oraclejdk13.json" &
