@@ -18,6 +18,7 @@ prepareImage "docker/terraform"
 prepareImage "docker/java"
 prepareImage "docker/nodejs"
 
+buildImage "docker/_base" "build.json"
 # build other images in parallel
 buildImage "docker/ansible" "build.json" &
 buildImage "docker/terraform" "build.json" &

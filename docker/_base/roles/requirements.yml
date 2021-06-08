@@ -1,7 +1,4 @@
 ---
 
-- src: geerlingguy.docker
-  version: "3.0.0"
-
 - src: pixelart.chrome
   version: "1.1.0"
