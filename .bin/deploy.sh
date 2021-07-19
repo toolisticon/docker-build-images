@@ -9,8 +9,7 @@ pushImages() {
   docker push toolisticon/terraform-builder:${1}
   docker push toolisticon/nodejs-builder:${1}
   docker push toolisticon/openjdk8-builder:${1}
-  docker push toolisticon/openjdk11-builder:${1}
-  docker push toolisticon/oraclejdk13-builder:${1}  
+  docker push toolisticon/openjdk11-builder:${1} 
 }
 
 

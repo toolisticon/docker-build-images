@@ -17,8 +17,8 @@ buildImage (){
 tagImages() {
   docker tag toolisticon/ansible-builder:${1} toolisticon/nodejs-builder:${2}
   docker tag toolisticon/terraform-builder:${1} toolisticon/terraform-builder:${2}
-  docker tag toolisticon/oraclejdk13-builder:${1} toolisticon/oraclejdk13-builder:${2}
   docker tag toolisticon/nodejs-builder:${2} toolisticon/nodejs-builder:${2}
+  docker tag toolisticon/openjdk11-builder:${1} toolisticon/openjdk11-builder:${2}
 }
 
 prepareAndBuildAndTag () {
@@ -40,7 +40,6 @@ prepareAndBuildAndTag () {
   buildImage "docker/terraform" "build.json"
   buildImage "docker/nodejs" "build.json"
   buildImage "docker/java" "openjdk11.json"
-  buildImage "docker/java" "oraclejdk13.json"
 
   # TAGGING
 
