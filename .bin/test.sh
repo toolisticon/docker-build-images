@@ -47,7 +47,6 @@ function runTerraformTests() {
   echo "Starting test image $image"
   removeTestImage "$testName" 2>/dev/null || true
   prepareTestImage "$image" "$testName"
-  docker exec "$testName" bash -ce "ansible --version"
   docker exec "$testName" bash -ce "terraform --version"
   removeTestImage $testName
   echo "Finished test image $image"
@@ -63,7 +62,7 @@ function runNodeJSTests() {
   prepareTestImage "$image" "$testName"
   docker exec "$testName" bash -ce "node --version"
   docker exec "$testName" bash -ce "npm --version"
-  docker exec "$testName" bash -ce "source ~/.nvm/nvm.sh && nvm --version"
+  docker exec "$testName" bash -ce "source ~/.profile && nvm --version"
   removeTestImage $testName
   echo "Finished test image $image"
   echo ""
@@ -73,8 +72,5 @@ function runNodeJSTests() {
 
 runAnsibleTests 'ansible-builder'
 runTerraformTests 'terraform-builder'
-runJavaImageTests 'openjdk8-builder'
 runJavaImageTests 'openjdk11-builder'
-runJavaImageTests 'oraclejdk12-builder'
-runJavaImageTests 'oraclejdk13-builder'
 runNodeJSTests 'nodejs-builder'
