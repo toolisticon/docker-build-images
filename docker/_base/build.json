@@ -1,7 +1,7 @@
 {
     "builders": [{
         "type": "docker",
-        "image": "buildpack-deps:bullseye",
+        "image": "buildpack-deps:latest",
         "pull": true,
         "commit": true,
         "changes": [
