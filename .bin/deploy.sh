@@ -10,6 +10,7 @@ pushImages() {
   docker push toolisticon/nodejs-builder:${1}
   docker push toolisticon/openjdk8-builder:${1}
   docker push toolisticon/openjdk11-builder:${1} 
+  docker push toolisticon/openjdk17-builder:${1} 
 }
 
 
