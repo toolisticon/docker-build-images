@@ -1,17 +1,19 @@
 #!/bin/sh
 
-export IMAGE_TAG=${1:-latest}
+export IMAGE_TAG=${1:-'v1.1.0'}
 export MAJOR_DOCKER_TAG=`echo $IMAGE_TAG | perl -0777 -pe 's/^v([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+))?(?:\+([0-9A-Za-z-]+))?/\1/'`
 export MINOR_DOCKER_TAG=`echo $IMAGE_TAG | perl -0777 -pe 's/^v([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+))?(?:\+([0-9A-Za-z-]+))?/\1\.\2/'`
 
+currentDir=$(pwd)
+
 prepareImage () {
   echo "Preparing Image ${1}"
-  (cd ${1} && ansible-galaxy install -r roles/requirements.yml -f)
+  cd ${1} && ansible-galaxy install -r roles/requirements.yml -f
 }
 
 buildImage (){
   echo "Building Image ${1} ${2}"
-  (cd ${1} && packer build $2)
+  cd ${1} && packer build $2
 }
 
 tagImages() {
@@ -24,11 +26,11 @@ tagImages() {
 prepareAndBuildAndTag () {
   # SETUP
 
-  prepareImage "docker/_base"
-  prepareImage "docker/ansible"
-  prepareImage "docker/terraform"
-  prepareImage "docker/java"
-  prepareImage "docker/nodejs"
+  prepareImage "${currentDir}/docker/_base"
+  prepareImage "${currentDir}/docker/ansible"
+  prepareImage "${currentDir}/docker/terraform"
+  prepareImage "${currentDir}/docker/java"
+  prepareImage "${currentDir}/docker/nodejs"
 
   # BUILDING
 
@@ -36,10 +38,10 @@ prepareAndBuildAndTag () {
   buildImage "docker/_base" "build.json"
 
   # build other images
-  buildImage "docker/ansible" "build.json"
-  buildImage "docker/terraform" "build.json"
-  buildImage "docker/nodejs" "build.json"
-  buildImage "docker/java" "openjdk11.json"
+  buildImage "${currentDir}/docker/ansible" "build.json"
+  buildImage "${currentDir}/docker/terraform" "build.json"
+  buildImage "${currentDir}/docker/nodejs" "build.json"
+  buildImage "${currentDir}/docker/java" "openjdk11.json"
 
   # TAGGING
 
