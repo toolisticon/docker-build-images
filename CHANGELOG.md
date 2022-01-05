@@ -1,3 +1,13 @@
+# [1.1.0](https://github.com/toolisticon/docker-build-images/compare/v1.0.0...v1.1.0) (2022-01-05)
+
+
+### Features
+
+* **Azure:** Adding azure CLI to base image ([c00045a](https://github.com/toolisticon/docker-build-images/commit/c00045a415e4463cd3ce772c6feafd24d88392f4))
+* **Java:** Adding JDK 17 ([4c25d52](https://github.com/toolisticon/docker-build-images/commit/4c25d5240f9e450860fad9f361b4dc60b94ad0fb))
+
+
+
 # [0.4.0](https://github.com/toolisticon/docker-build-images/compare/v0.3.0...v0.4.0) (2019-11-11)
 
 
