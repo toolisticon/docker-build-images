@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export IMAGE_TAG=${1:-latest}
+export IMAGE_TAG=${1:-'v1.1.0'}
 export MAJOR_DOCKER_TAG=`echo $IMAGE_TAG | perl -0777 -pe 's/^v([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+))?(?:\+([0-9A-Za-z-]+))?/\1/'`
 export MINOR_DOCKER_TAG=`echo $IMAGE_TAG | perl -0777 -pe 's/^v([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+))?(?:\+([0-9A-Za-z-]+))?/\1\.\2/'`
 

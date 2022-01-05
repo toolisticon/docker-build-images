@@ -8,6 +8,7 @@ Various Docker Images for Building NodeJS, Java and Ansible artifacts
 * Terraform: [![Docker Pulls](https://img.shields.io/docker/pulls/toolisticon/terraform-builder.svg)](https://hub.docker.com/r/toolisticon/terraform-builder)
 * Java:
   * OpenJDK 11: [![Docker Pulls](https://img.shields.io/docker/pulls/toolisticon/openjdk11-builder.svg)](https://hub.docker.com/r/toolisticon/openjdk11-builder)
+  * OpenJDK 17: [![Docker Pulls](https://img.shields.io/docker/pulls/toolisticon/openjdk17-builder.svg)](https://hub.docker.com/r/toolisticon/openjdk17-builder)
 * NodeJS: [![Docker Pulls](https://img.shields.io/docker/pulls/toolisticon/nodejs-builder.svg)](https://hub.docker.com/r/toolisticon/nodejs-builder)
 
 > **Versioning**

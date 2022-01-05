@@ -1,0 +1,31 @@
+{
+  "variables": {
+    "image_tag": "{{env `IMAGE_TAG`}}"
+  },
+  "builders": [
+    {
+      "type": "docker",
+      "image": "toolisticon/base-builder-image",
+      "pull": false,
+      "commit": true,
+      "changes": ["VOLUME /data", "WORKDIR /data", "ENTRYPOINT /bin/bash"]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "ansible",
+      "user": "root",
+      "playbook_file": "ansible/openjdk17.yml",
+      "extra_arguments": ["-v"]
+    }
+  ],
+  "post-processors": [
+    [
+      {
+        "type": "docker-tag",
+        "repository": "toolisticon/openjdk17-builder",
+        "tag": "{{user `image_tag`}}"
+      }
+    ]
+  ]
+}

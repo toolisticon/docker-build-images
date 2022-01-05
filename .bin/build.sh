@@ -42,6 +42,7 @@ prepareAndBuildAndTag () {
   buildImage "${currentDir}/docker/terraform" "build.json"
   buildImage "${currentDir}/docker/nodejs" "build.json"
   buildImage "${currentDir}/docker/java" "openjdk11.json"
+  buildImage "${currentDir}/docker/java" "openjdk17.json"
 
   # TAGGING
 
