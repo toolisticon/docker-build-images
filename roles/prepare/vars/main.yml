@@ -7,7 +7,6 @@ common_packages:
 - "gettext"
 - "git"
 - "google-cloud-sdk"
-- "azure-cli"
 - "htop"
 - "libxss1"
 - "python3-pip"
