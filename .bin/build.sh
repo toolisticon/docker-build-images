@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export IMAGE_TAG=${1:-1.1.0}
+export IMAGE_TAG=${1:-1.1.1}
 export MAJOR_DOCKER_TAG=`echo $IMAGE_TAG | perl -0777 -pe 's/^([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+))?(?:\+([0-9A-Za-z-]+))?/\1/'`
 export MINOR_DOCKER_TAG=`echo $IMAGE_TAG | perl -0777 -pe 's/^([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+))?(?:\+([0-9A-Za-z-]+))?/\1\.\2/'`
 
@@ -35,7 +35,7 @@ prepareAndBuildAndTag () {
   # BUILDING
 
   # Build Base
-  buildImage "docker/_base" "build.json"
+  buildImage "${currentDir}/docker/_base" "build.json"
 
   # build other images
   buildImage "${currentDir}/docker/ansible" "build.json"
