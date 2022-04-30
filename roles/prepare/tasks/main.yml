@@ -6,8 +6,8 @@
     upgrade: safe
 
 - name: Install apt-transport-https
-  apt: 
-    name: apt-transport-https 
+  apt:
+    name: apt-transport-https
     state: present
 
 - name: Adding APT Keys
@@ -22,9 +22,8 @@
     state: present
   with_items: '{{ apt_repos }}'
 
-
 - name: Install common packages
-  apt: 
+  apt:
     name: "{{ common_packages }}"
     state: present
 
@@ -34,7 +33,7 @@
 - name: Bootstrap python
   raw: test -e /usr/bin/python || (apt-get -y update && apt-get install -y python3 && update-alternatives --install /usr/bin/python python /usr/bin/python3 1)
 
-- name: Install NodeJS
+- name: Install NodeJS LTS
   raw: curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&  apt-get install -y nodejs
 
 - name: Boostrap kubectl
