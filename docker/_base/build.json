@@ -1,25 +1,37 @@
 {
-    "builders": [{
-        "type": "docker",
-        "image": "buildpack-deps:latest",
-        "pull": true,
-        "commit": true,
-        "changes": [
-            "VOLUME /data",
-            "WORKDIR /data",
-            "ENTRYPOINT /bin/bash"
-        ]
-    }],
-    "provisioners":[{
-        "type": "ansible",
-        "user": "root",
-        "playbook_file": "ansible/playbook.yml",
-        "extra_arguments": [ "-v" ]
-      }
-    ],
-    "post-processors": [[ {
-        "type": "docker-tag",
+  "builders": [
+    {
+      "changes": [
+        "VOLUME /data",
+        "WORKDIR /data",
+        "ENTRYPOINT /bin/bash"
+      ],
+      "commit": true,
+      "image": "buildpack-deps:latest",
+      "pull": true,
+      "type": "docker"
+    }
+  ],
+  "post-processors": [
+    [
+      {
         "repository": "toolisticon/base-builder-image",
-        "tag": "latest"
-    } ]]
+        "tags": [
+          "latest"
+        ],
+        "type": "docker-tag"
+      }
+    ]
+  ],
+  "provisioners": [
+    {
+      "extra_arguments": [
+        "-v"
+      ],
+      "playbook_file": "ansible/playbook.yml",
+      "type": "ansible",
+      "user": "root"
+    }
+  ]
 }
+

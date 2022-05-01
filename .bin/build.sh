@@ -21,6 +21,7 @@ tagImages() {
   docker tag toolisticon/terraform-builder:${1} toolisticon/terraform-builder:${2}
   docker tag toolisticon/nodejs-builder:${2} toolisticon/nodejs-builder:${2}
   docker tag toolisticon/openjdk11-builder:${1} toolisticon/openjdk11-builder:${2}
+  docker tag toolisticon/openjdk17-builder:${1} toolisticon/openjdk17-builder:${2}
 }
 
 prepareAndBuildAndTag () {

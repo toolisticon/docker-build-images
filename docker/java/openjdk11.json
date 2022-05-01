@@ -1,31 +1,40 @@
 {
-  "variables": {
-    "image_tag": "{{env `IMAGE_TAG`}}"
-  },
   "builders": [
     {
-      "type": "docker",
+      "changes": [
+        "VOLUME /data",
+        "WORKDIR /data",
+        "ENTRYPOINT /bin/bash"
+      ],
+      "commit": true,
       "image": "toolisticon/base-builder-image",
       "pull": false,
-      "commit": true,
-      "changes": ["VOLUME /data", "WORKDIR /data", "ENTRYPOINT /bin/bash"]
-    }
-  ],
-  "provisioners": [
-    {
-      "type": "ansible",
-      "user": "root",
-      "playbook_file": "ansible/openjdk11.yml",
-      "extra_arguments": ["-v"]
+      "type": "docker"
     }
   ],
   "post-processors": [
     [
       {
-        "type": "docker-tag",
         "repository": "toolisticon/openjdk11-builder",
-        "tag": "{{user `image_tag`}}"
+        "tags": [
+          "{{user `image_tag`}}"
+        ],
+        "type": "docker-tag"
       }
     ]
-  ]
+  ],
+  "provisioners": [
+    {
+      "extra_arguments": [
+        "-v"
+      ],
+      "playbook_file": "ansible/openjdk11.yml",
+      "type": "ansible",
+      "user": "root"
+    }
+  ],
+  "variables": {
+    "image_tag": "{{env `IMAGE_TAG`}}"
+  }
 }
+

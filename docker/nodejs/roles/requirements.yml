@@ -1,7 +1,7 @@
 ---
 
 - src: geerlingguy.nodejs
-  version: "5.0.0"
+  version: "6.0.0"
 
 - src: stephdewit.nvm
-  version: "v3.2.0"
+  version: "v3.3.0"
