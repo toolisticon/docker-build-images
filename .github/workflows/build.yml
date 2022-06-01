@@ -82,7 +82,7 @@ jobs:
   deploy:
     needs: [build]
     runs-on: ubuntu-latest
-    if: github.ref == 'develop' || github.ref == 'master'
+    if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v1
 
@@ -103,7 +103,7 @@ jobs:
           export PATH=$PATH:$(pwd)
           ./.bin/build.sh
           ./.bin/deploy.sh
-        if: github.ref == 'master'
+        if: github.ref == 'refs/heads/master'
 
       - name: Build and Deploy Snaphot Images
         run: |
@@ -111,4 +111,4 @@ jobs:
           export PATH=$PATH:$(pwd)
           ./.bin/build.sh $TIMESTAMP
           ./.bin/deploy.sh $TIMESTAMP
-        if: github.ref == 'develop'
+        if: github.ref == 'refs/heads/develop'

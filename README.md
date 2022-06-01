@@ -12,11 +12,11 @@ Various Docker Images for Building NodeJS, Java and Ansible artifacts
 * NodeJS: [![Docker Pulls](https://img.shields.io/docker/pulls/toolisticon/nodejs-builder.svg)](https://hub.docker.com/r/toolisticon/nodejs-builder)
 
 > **Versioning**
-> 
+>
 > We aimed to loosely follow semantic versioning (semver) to tag these docker images and use retagging to make container orchestration easier:
-> 
+>
 > Version 1.2.3 is also matched by tags 1 and 1.2. Once 1.2.4 becomes available, they will be updated to match it, and so on. This is also the naming scheme of many official docker images.
-> 
+>
 
 - [docker-build-images](#docker-build-images)
   - [Usage](#usage)
@@ -36,6 +36,14 @@ All images share common base:
   * rsync
   * curl
   * nodejs/npm
+  * kubectl
+* Cloud Clients for
+ * GCloud
+ * Azure
+* Database Clients for
+  * Postgres
+  * MS SQL
+  * MongoDB
 
 ## Tools used
 
