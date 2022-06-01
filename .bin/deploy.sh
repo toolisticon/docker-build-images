@@ -1,8 +1,6 @@
 #!/bin/sh
 
-export IMAGE_TAG=${1:-1.1.2}
-export MAJOR_DOCKER_TAG=`echo $IMAGE_TAG | perl -0777 -pe 's/^([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+))?(?:\+([0-9A-Za-z-]+))?/\1/'`
-export MINOR_DOCKER_TAG=`echo $IMAGE_TAG | perl -0777 -pe 's/^([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+))?(?:\+([0-9A-Za-z-]+))?/\1\.\2/'`
+source ./.bin/_bash.inc
 
 pushImages() {
   docker push toolisticon/ansible-builder:${1}
@@ -13,6 +11,14 @@ pushImages() {
   docker push toolisticon/openjdk17-builder:${1}
 }
 
+# TAGGING
+
+echo "Tagging Major to ${MAJOR_DOCKER_TAG}"
+tagImages ${IMAGE_TAG} ${MAJOR_DOCKER_TAG}
+echo "Tagging Minor to ${MINOR_DOCKER_TAG}"
+tagImages ${IMAGE_TAG} ${MINOR_DOCKER_TAG}
+echo "Tagging Latest"
+tagImages ${IMAGE_TAG} "latest"
 
 # PUSH IMAGES
 

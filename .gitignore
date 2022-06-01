@@ -1,2 +1,13 @@
+# OS stuff
+*.icloud
+._*
+.DS_Store
+Thumbs.db
+Desktop.ini
+.Spotlight-V100
+.Trashes
+
+
+# Ansible
 roles
 *.retry

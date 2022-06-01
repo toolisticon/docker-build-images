@@ -3,44 +3,86 @@ name: CI
 on: [push]
 
 jobs:
-  build:
-    name: Test on node ${{ matrix.python_version }} and ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        python_version: [2.7, 3.5, 3.6, 3.7]
+  prepare:
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v1
 
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python
       uses: actions/setup-python@v1
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: 3.7
 
-    - name: Set up packer
+    - name: Set up packer and dependencies
       run: |
         wget https://releases.hashicorp.com/packer/1.8.0/packer_1.8.0_linux_amd64.zip
         unzip packer_1.8.0_linux_amd64.zip
-
-    - name: Install dependencies
-      run: |
         pip install -r requirements.txt
 
-    - name: Build Images
+    - name: Build Base Image
       run: |
-        export PATH=$PATH:$(pwd)
-        ./.bin/build.sh
+        .bin/build-base.sh
 
-    - name: Test Images
+    - name: Save Base Image
       run: |
-        export PATH=$PATH:$(pwd)
-        ./.bin/test.sh
+        docker save -o /tmp/base-image.tar toolisticon/base-builder-image
+
+    - name: Upload Base Image
+      uses: actions/upload-artifact@v2
+      with:
+        name: base-image
+        path: /tmp/base-image.tar
+
+
+  build:
+    needs: [prepare]
+    name: Building ${{ matrix.image }} image(s)
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        image: ['ansible','java','nodejs','terraform']
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+
+    - name: Set up packer and dependencies
+      run: |
+        wget https://releases.hashicorp.com/packer/1.8.0/packer_1.8.0_linux_amd64.zip
+        unzip packer_1.8.0_linux_amd64.zip
+        pip install -r requirements.txt
+
+    - name: Download Base Image
+      uses: actions/download-artifact@v2
+      with:
+        name: base-image
+        path: /tmp
+    -
+      name: Load Base Image
+      run: |
+        docker load --input /tmp/base-image.tar
+
+    - name: Build Image(s)
+      run: |
+        source ./.bin/_bash.inc
+        export image=${{matrix.image}}
+
+        prepareImage "${currentDir}/docker/${image}"
+        for entry in ${currentDir}/docker/${image}/*.json;
+        do
+          buildImage "${currentDir}/docker/${image}" "$entry"
+        done
 
   deploy:
     needs: [build]
     runs-on: ubuntu-latest
+    if: github.ref == 'develop' || github.ref == 'master'
     steps:
       - uses: actions/checkout@v1
 
