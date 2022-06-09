@@ -36,11 +36,21 @@
 - name: Install NodeJS LTS
   raw: curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&  apt-get install -y nodejs
 
-- name: Boostrap kubectl
-  raw: curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && chmod +x ./kubectl && mv ./kubectl /usr/local/bin/kubectl
-
 - name: Install Docker
   raw: curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg && echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list && apt-get -y update && apt-get -y install docker-ce docker-ce-cli containerd.io
 
 - name: Install Azure CLI
   raw: curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+- name: Install Helm
+  raw: curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+
+- name: Install Helm Plugins
+  raw: "helm plugin install {{ item.url }}"
+  with_items: '{{ helm_plugins }}'
+
+- name: Install Kustomize
+  raw: curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
+
+- name: Install Helmfile
+  raw: wget -O helmfile_linux_amd64 https://github.com/roboll/helmfile/releases/download/v0.144.0/helmfile_linux_amd64  && mv helmfile_linux_amd64 /usr/local/bin/helmfile && chmod 755 /usr/local/bin/helmfile
