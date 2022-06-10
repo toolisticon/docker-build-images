@@ -2,5 +2,8 @@
 
 - name: Prepare | Setup Ansible runtime
   hosts: all
+  vars_files:
+    - vars/main.yml
   roles:
-    - { role: ../../roles/prepare, tags: [ 'ansible' ], become: yes }
+    - { role: ../../roles/prepare, tags: [ 'ansible' ], become: true }
+    - { role: geerlingguy.pip, tags: [ 'build' ], become: true }

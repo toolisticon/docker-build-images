@@ -37,11 +37,7 @@ apt_repos:
   - "deb [arch=amd64] https://packages.microsoft.com/debian/10/prod buster main"
   - "deb http://repo.mongodb.org/apt/debian buster/mongodb-org/4.4 main"
 helm_plugins:
-  - url: https://github.com/databus23/helm-diff
-    version: v3.3.1
-  - url: https://github.com/jkroepke/helm-secrets
-    version: v3.5.0
-  - url: https://github.com/hypnoglow/helm-s3
-    version: v0.10.0 
-  - url: https://github.com/aslafy-z/helm-git
-    version: v0.10.0
+  - "https://github.com/databus23/helm-diff"
+  - "https://github.com/jkroepke/helm-secrets"
+  - "https://github.com/hypnoglow/helm-s3"
+  - "https://github.com/aslafy-z/helm-git"

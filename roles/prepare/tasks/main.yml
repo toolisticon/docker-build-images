@@ -46,7 +46,7 @@
   raw: curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
 - name: Install Helm Plugins
-  raw: "helm plugin install {{ item.url }}"
+  raw: "helm plugin install {{ item }}"
   with_items: '{{ helm_plugins }}'
 
 - name: Install Kustomize

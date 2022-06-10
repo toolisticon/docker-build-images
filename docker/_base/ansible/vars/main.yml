@@ -1,6 +1,4 @@
 ---
 pip_install_packages:
   - name: docker
-  - name: ansible
-  - name: molecule
-  - name: pyyaml
+  - name: mssql-cli
