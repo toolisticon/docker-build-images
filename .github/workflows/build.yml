@@ -73,10 +73,10 @@ jobs:
         export image=${{matrix.image}}
 
         prepareImage "${currentDir}/docker/${image}"
-        for entry in ${currentDir}/docker/${image}/*.json;
+        for entry in ${currentDir}/docker/${image}/*.pkr.hcl;
         do
           buildImage "${currentDir}/docker/${image}" "$entry"
-          imageName=$(cat "$entry" | grep 'repository' | cut -d'"' -f4)
+          imageName=$(cat "$entry" | grep 'repository' | cut -d'"' -f2)
           fileName=$(echo "$imageName" | cut -d'/' -f2 | cut -d'-' -f1)
           mkdir -p /tmp/docker-images/
           docker save -o /tmp/docker-images/$fileName-image.tar $imageName
@@ -124,9 +124,9 @@ jobs:
           source ./.bin/_bash.inc
           export image=${{matrix.image}}
 
-          for entry in ${currentDir}/docker/${image}/*.json;
+          for entry in ${currentDir}/docker/${image}/*.pkr.hcl;
           do
-            imageName=$(cat "$entry" | grep 'repository' | cut -d'"' -f4)
+            imageName=$(cat "$entry" | grep 'repository' | cut -d'"' -f2)
             fileName=$(echo "$imageName" | cut -d'/' -f2 | cut -d'-' -f1)
             docker tag ${imageName}:${IMAGE_TAG} ${imageName}:${MAJOR_DOCKER_TAG}
             docker tag ${imageName}:${IMAGE_TAG} ${imageName}:${MINOR_DOCKER_TAG}
@@ -142,10 +142,10 @@ jobs:
           source ./.bin/_bash.inc
           export image=${{matrix.image}}
 
-          for entry in ${currentDir}/docker/${image}/*.json;
+          for entry in ${currentDir}/docker/${image}/*.pkr.hcl;
           do
             timeStamp=$(date +%s)
-            imageName=$(cat "$entry" | grep 'repository' | cut -d'"' -f4)
+            imageName=$(cat "$entry" | grep 'repository' | cut -d'"' -f2)
             fileName=$(echo "$imageName" | cut -d'/' -f2 | cut -d'-' -f1)
             docker tag ${imageName}:${IMAGE_TAG} ${imageName}:${timeStamp}
             docker push ${imageName}:${timeStamp}
