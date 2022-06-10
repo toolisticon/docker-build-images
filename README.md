@@ -37,6 +37,8 @@ All images share common base:
   * curl
   * nodejs/npm
   * kubectl
+  * helm
+  * [helmfile](https://helmfile.readthedocs.io)
 * Cloud Clients for
  * GCloud
  * Azure
