@@ -15,8 +15,16 @@ build {
     user            = "root"
   }
 
-  post-processor "docker-tag" {
-    repository = "toolisticon/base-builder-image"
-    tags       = ["latest"]
+  post-processors {
+    post-processor "docker-tag" {
+      repository = "toolisticon/base-builder-image"
+      tags       = ["latest"]
+    }
+
+    # create checksum
+    post-processor "checksum" {
+      checksum_types      = ["md5", "sha512"]
+      keep_input_artifact = true
+    }
   }
 }
