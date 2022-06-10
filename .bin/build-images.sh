@@ -9,8 +9,8 @@ prepareImage "${currentDir}/docker/nodejs"
 
 
 # build images
-buildImage "${currentDir}/docker/ansible" "build.json"
-buildImage "${currentDir}/docker/terraform" "build.json"
-buildImage "${currentDir}/docker/java" "openjdk11.json"
-buildImage "${currentDir}/docker/java" "openjdk17.json"
-buildImage "${currentDir}/docker/nodejs" "build.json"
+buildImage "${currentDir}/docker/ansible" "build.pkr.hcl"
+buildImage "${currentDir}/docker/terraform" "build.pkr.hcl"
+buildImage "${currentDir}/docker/java" "openjdk11.pkr.hcl"
+buildImage "${currentDir}/docker/java" "openjdk17.pkr.hcl"
+buildImage "${currentDir}/docker/nodejs" "build.pkr.hcl"
