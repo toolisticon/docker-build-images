@@ -1,5 +1,7 @@
 ---
 pip_install_packages:
   - name: ansible
+  - name: ansible-lint
   - name: molecule
   - name: pyyaml
+  - name: yamllint
