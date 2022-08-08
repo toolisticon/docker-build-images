@@ -21,11 +21,16 @@ common_packages:
   - "wget"
   # Cloud Tools
   - kubectl
+  - jq
+  # yq is installed from GitHub
   # DB Clients
   - "postgresql-client"
   # Blocked by https://github.com/dbcli/mssql-cli/pull/505
   #- "mssql-tools"
   - "mongodb-org-tools"
+snap_packages:
+  - jq
+  - yq
 apt_keys:
   - "https://packages.cloud.google.com/apt/doc/apt-key.gpg"
   - "https://dl-ssl.google.com/linux/linux_signing_key.pub"
