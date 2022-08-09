@@ -1,4 +1,33 @@
-# [v1.2.0](https://github.com/toolisticon/docker-build-images/compare/v1.1.1...v1.2.0) (2022-06-03)
+# [](https://github.com/toolisticon/docker-build-images/compare/v1.4.0...v1.4.1) (2022-08-09)
+
+
+### Bug Fixes
+
+* **yq:** use latest yq ([f538826](https://github.com/toolisticon/docker-build-images/commit/f538826d3ad31b6d16e9d1b695f235cc23f5b167))
+
+
+# [1.4.0](https://github.com/toolisticon/docker-build-images/compare/v1.3.0...v1.4.0) (2022-08-08)
+
+### Features
+
+* **Tools:** Adding yq and jq ([87434da](https://github.com/toolisticon/docker-build-images/commit/87434da33f2164a6934534ca1ede7af2c49a2f9d))
+
+
+
+# [1.3.0](https://github.com/toolisticon/docker-build-images/compare/v1.2.0...v1.3.0) (2022-06-11)
+
+
+### Features
+
+* **Ansible:** Adding linting tools ([a918fe5](https://github.com/toolisticon/docker-build-images/commit/a918fe5bc940e6fd901b5ece3c76fa59b6c1d658))
+* **Docker:** Adding checksum ([4d07724](https://github.com/toolisticon/docker-build-images/commit/4d0772462ac1f2fac5be67ec802f1447c4dc2897))
+* **Helm:** Adding Helm, Plugins and Helmfile ([41494d8](https://github.com/toolisticon/docker-build-images/commit/41494d8dd4452fe1ec7c04494b2f93c608dec31d))
+* **Packer:** Switch to HCL2 Packer templates ([d2f3d53](https://github.com/toolisticon/docker-build-images/commit/d2f3d5317c88104bc9969a369693a63b8869964f))
+* **Tools:** Use PIP version of mssql-cli ([f3b2bbf](https://github.com/toolisticon/docker-build-images/commit/f3b2bbf6cfd3774fc54e8c627a37a11803014a35))
+
+
+
+# [1.2.0](https://github.com/toolisticon/docker-build-images/compare/v1.1.1...v1.2.0) (2022-06-03)
 
 
 ### Bug Fixes
