@@ -1,4 +1,13 @@
-# [](https://github.com/toolisticon/docker-build-images/compare/v1.4.0...v1.4.1) (2022-08-09)
+# [1.4.2](https://github.com/toolisticon/docker-build-images/compare/v1.4.1...v1.4.2) (2022-08-19)
+
+
+### Bug Fixes
+
+* **Terraform:** Use latest terraform ([e059cf5](https://github.com/toolisticon/docker-build-images/commit/e059cf53de2cb8bcf65b1b713c3200c53fc696a6))
+
+
+
+## [1.4.1](https://github.com/toolisticon/docker-build-images/compare/v1.4.0...v1.4.1) (2022-08-09)
 
 
 ### Bug Fixes
@@ -6,7 +15,9 @@
 * **yq:** use latest yq ([f538826](https://github.com/toolisticon/docker-build-images/commit/f538826d3ad31b6d16e9d1b695f235cc23f5b167))
 
 
+
 # [1.4.0](https://github.com/toolisticon/docker-build-images/compare/v1.3.0...v1.4.0) (2022-08-08)
+
 
 ### Features
 
@@ -162,3 +173,6 @@
 ### Features
 
 * **Docker:** Initial commit ([52d0d5d](https://github.com/toolisticon/docker-build-images/commit/52d0d5d916d759e7c47342119c4096673bea1b9e))
+
+
+
