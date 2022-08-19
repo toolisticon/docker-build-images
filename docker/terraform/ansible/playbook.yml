@@ -4,5 +4,6 @@
   vars_files:
     - vars/main.yml
   roles:
-    - { role: migibert.terraform, tags: [ 'build' ]}
     - { role: ../../roles/cleanup, tags: [ 'ansible' ], become: yes }
+  tasks:
+    - include: tasks/main.yml

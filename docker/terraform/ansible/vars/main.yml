@@ -1,6 +1,7 @@
 ---
-pip_install_packages:
-  - name: docker
-  - name: ansible
-  - name: molecule
-  - name: pyyaml
+terraform_packages:
+  - "terraform"
+apt_keys:
+  - "https://apt.releases.hashicorp.com/gpg"
+apt_repos:
+  - "deb https://apt.releases.hashicorp.com bullseye main"

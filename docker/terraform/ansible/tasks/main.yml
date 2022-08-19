@@ -1,0 +1,18 @@
+---
+
+- name: Adding APT Keys
+  apt_key:
+    url: "{{ item }}"
+    state: present
+  with_items: '{{ apt_keys }}'
+
+- name: Adding APT Repos
+  apt_repository:
+    repo: "{{ item }}"
+    state: present
+  with_items: '{{ apt_repos }}'
+
+- name: Install needed packages
+  apt:
+    name: "{{ terraform_packages }}"
+    state: present
