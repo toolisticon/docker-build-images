@@ -95,7 +95,7 @@ jobs:
     strategy:
       matrix:
         image: ['ansible', 'java', 'nodejs', 'terraform']
-    if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v3
 
@@ -134,7 +134,7 @@ jobs:
             docker push ${imageName}:${MAJOR_DOCKER_TAG}
             docker push ${imageName}:${MINOR_DOCKER_TAG}
           done
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
 
       - name: Push Snaphot Images
         run: |
