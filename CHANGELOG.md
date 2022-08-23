@@ -1,4 +1,18 @@
-# [1.4.2](https://github.com/toolisticon/docker-build-images/compare/v1.4.1...v1.4.2) (2022-08-19)
+# [1.5.0](https://github.com/toolisticon/docker-build-images/compare/v1.4.2...v1.5.0) (2022-08-23)
+
+
+### Bug Fixes
+
+* Drop HelmS3 for now ([91a8693](https://github.com/toolisticon/docker-build-images/commit/91a8693e3a540336afefb37161558c683a7f6781))
+
+
+### Features
+
+* Adding TFLint ([3a9a7ac](https://github.com/toolisticon/docker-build-images/commit/3a9a7ac214c30617cc388cd9eb640b13b2a56f6c))
+
+
+
+## [1.4.2](https://github.com/toolisticon/docker-build-images/compare/v1.4.1...v1.4.2) (2022-08-19)
 
 
 ### Bug Fixes
@@ -173,6 +187,3 @@
 ### Features
 
 * **Docker:** Initial commit ([52d0d5d](https://github.com/toolisticon/docker-build-images/commit/52d0d5d916d759e7c47342119c4096673bea1b9e))
-
-
-
