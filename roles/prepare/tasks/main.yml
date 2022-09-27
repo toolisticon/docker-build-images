@@ -56,4 +56,7 @@
   raw: curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
 
 - name: Install Helmfile
-  raw: wget -O helmfile_linux_amd64 https://github.com/roboll/helmfile/releases/download/v0.144.0/helmfile_linux_amd64  && mv helmfile_linux_amd64 /usr/local/bin/helmfile && chmod 755 /usr/local/bin/helmfile
+  raw: |
+    wget https://github.com/helmfile/helmfile/releases/download/v0.146.0/helmfile_0.146.0_linux_amd64.tar.gz
+    tar xfvz helmfile_*.tar.gz
+    mv helmfile /usr/local/bin/helmfile && chmod 755 /usr/local/bin/helmfile
