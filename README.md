@@ -50,3 +50,11 @@ All images share common base:
 ## Tools used
 
 For building these images [Packer](https://www.packer.io/docs/builders/docker.html) and [Ansible](https://docs.ansible.com/ansible/latest/index.html) are used.
+
+## Development
+
+1. Update version in `.bin/_bash.inc`
+2. Run `conventional-changelog -p angular -i CHANGELOG.md -s -r 0` and adjust changelog
+3. Push changes to `develop` branch and wait for CI build
+4. Once complete, merge changes to `main`  branch and wait for CI build
+5. Once complete create a new tag: `v<VERSION>` and create a release on GitHub
