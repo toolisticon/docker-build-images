@@ -1,12 +1,13 @@
-# [1.5.1](https://github.com/toolisticon/docker-build-images/compare/v1.5.0...v1.5.1) (2022-09-30)
+## [1.5.1](https://github.com/toolisticon/docker-build-images/compare/v1.5.1...v1.5.2) (2022-10-21)
 
+* Update yq and helmfile to latest version
 
-### Features
-* Update helm and helmfile
+## [1.5.1](https://github.com/toolisticon/docker-build-images/compare/v1.5.0...v1.5.1) (2022-09-30)
+
 
 ### Bug Fixes
 
-* Reenable Helm S3 Plugin ([69bf1a7](https://github.com/toolisticon/docker-build-images/commit/69bf1a7d811bdbd951f7fdc0e6aa3aeed94d51e8))
+* Renable Helm S3 Plugin ([69bf1a7](https://github.com/toolisticon/docker-build-images/commit/69bf1a7d811bdbd951f7fdc0e6aa3aeed94d51e8))
 
 
 
