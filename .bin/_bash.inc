@@ -1,6 +1,9 @@
-export IMAGE_TAG=${1:-1.5.1}
+VERSION=$(cat .env | grep VERSION | cut -d '=' -f 2)
+export IMAGE_TAG=${1:-$VERSION}
 export MAJOR_DOCKER_TAG=`echo $IMAGE_TAG | perl -0777 -pe 's/^([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+))?(?:\+([0-9A-Za-z-]+))?/\1/'`
 export MINOR_DOCKER_TAG=`echo $IMAGE_TAG | perl -0777 -pe 's/^([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+))?(?:\+([0-9A-Za-z-]+))?/\1\.\2/'`
+
+echo "Building version ${IMAGE_TAG} ... "
 
 currentDir=$(pwd)
 
