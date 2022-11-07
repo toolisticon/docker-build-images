@@ -1,3 +1,4 @@
 ---
 nodejs_version: "16.x"
 nvm_node_version: "16.5.0"
+nvm_install_globally: ['yarn']

@@ -1,0 +1,9 @@
+---
+
+- name: Install NodeJS Repo
+  raw: curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+
+- name: Install NodeJS LTS
+  apt:
+    name: "nodejs"
+    state: present
