@@ -3,6 +3,7 @@ common_packages:
   - "ca-certificates"
   - "curl"
   - "dumb-init"
+  - "freetds-dev"
   - "gawk"
   - "gettext"
   - "git"
@@ -13,7 +14,7 @@ common_packages:
   - "lsb-release"
   - "gnupg"
   - "rsync"
-  - "google-chrome-stable"
+  - "chromium"
   - "sudo"
   - "zip"
   - "unzip"
@@ -27,7 +28,7 @@ common_packages:
   - "postgresql-client"
   # Blocked by https://github.com/dbcli/mssql-cli/pull/505
   #- "mssql-tools"
-  - "mongodb-org-tools"
+  - "mongo-tools"
 snap_packages:
   - jq
   - yq
@@ -35,13 +36,10 @@ apt_keys:
   - "https://packages.cloud.google.com/apt/doc/apt-key.gpg"
   - "https://dl-ssl.google.com/linux/linux_signing_key.pub"
   - "https://packages.microsoft.com/keys/microsoft.asc"
-  - "https://www.mongodb.org/static/pgp/server-4.4.asc"
 apt_repos:
   - "deb https://apt.kubernetes.io/ kubernetes-xenial main"
   - "deb http://packages.cloud.google.com/apt cloud-sdk main"
-  - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
-  - "deb [arch=amd64] https://packages.microsoft.com/debian/10/prod buster main"
-  - "deb http://repo.mongodb.org/apt/debian buster/mongodb-org/4.4 main"
+  - "deb https://packages.microsoft.com/debian/10/prod buster main"
 helm_plugins:
   - "https://github.com/databus23/helm-diff"
   - "https://github.com/jkroepke/helm-secrets"

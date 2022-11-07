@@ -7,5 +7,3 @@
     - { role: geerlingguy.nodejs, tags: [ 'nodejs' ], become: yes }
     - { role: grzegorznowak.nvm_node, tags: [ 'nodejs' ], become: yes }
     - { role: ../../roles/cleanup, tags: [ 'ansible' ], become: yes }
-  tasks:
-    - include: tasks/main.yml

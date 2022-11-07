@@ -28,7 +28,7 @@ Various Docker Images for Building NodeJS, Java and Ansible artifacts
 ### What's installed
 
 All images share common base:
-* Chrome
+* Chromium
 * Docker
 * Common tools:
   * wget
