@@ -1,4 +1,4 @@
 ---
-
-- src: grzegorznowak.nvm_node
-  version: "1.2.6"
+  
+- src: stephdewit.nvm
+  version: "v3.3.0"
