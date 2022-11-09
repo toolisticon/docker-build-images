@@ -34,9 +34,10 @@ common_packages:
   # yq is installed from GitHub
   # DB Clients
   - "postgresql-client"
-  - sqlcmd
-  #- "mongocli"
-  #- "mongodb-database-tools"
+  - "sqlcmd"
+  - "mongocli"
+  - "mongodb-database-tools"
+  # Further tools
   - "nodejs"
 snap_packages:
   - jq
@@ -50,12 +51,15 @@ apt_keys:
     file_name: microsoft.gpg
   - url: "https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key"
     file_name: nodesource.gpg
+  - url: "https://www.mongodb.org/static/pgp/server-7.0.asc"
+    file_name: /mongodb-server-7.0.gpg
 apt_repos:
   - "deb [signed-by=/etc/apt/keyrings/k8s.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /"
   - "deb [signed-by=/etc/apt/keyrings/google.gpg] https://packages.cloud.google.com/apt cloud-sdk main"
   - "deb [signed-by=/etc/apt/keyrings/microsoft.gpg] https://packages.microsoft.com/ubuntu/20.04/prod focal main"
   - "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main"
   - "deb http://deb.debian.org/debian unstable main non-free contrib"
+  - "deb [arch=amd64,arm64 signed-by=/etc/apt/keyrings/mongodb-server-7.0.gpg] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse"
 helm_plugins:
   - "https://github.com/databus23/helm-diff"
   - "https://github.com/jkroepke/helm-secrets"
