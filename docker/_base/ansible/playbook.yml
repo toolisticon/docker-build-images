@@ -6,3 +6,4 @@
     - vars/main.yml
   roles:
     - { role: ../../roles/prepare, tags: [ 'ansible' ], become: true }
+    - { role: geerlingguy.pip, tags: [ 'build' ], become: true }
