@@ -31,7 +31,8 @@ common_packages:
   - "postgresql-client"
   # Blocked by https://github.com/dbcli/mssql-cli/pull/505
   #- "mssql-tools"
-  - "mongo-tools"
+  #- "mongocli"
+  #- "mongodb-database-tools"
 snap_packages:
   - jq
   - yq
@@ -41,7 +42,7 @@ apt_keys:
   - "https://packages.microsoft.com/keys/microsoft.asc"
 apt_repos:
   - "deb https://apt.kubernetes.io/ kubernetes-xenial main"
-  - "deb http://packages.cloud.google.com/apt cloud-sdk main"
+  - "deb https://packages.cloud.google.com/apt cloud-sdk main"
   - "deb https://packages.microsoft.com/debian/10/prod buster main"
 helm_plugins:
   - "https://github.com/databus23/helm-diff"
