@@ -10,6 +10,7 @@ common_packages:
   - "google-cloud-sdk"
   - "htop"
   - "libxss1"
+  - "python3"
   - "python3-pip"
   - "python3-pkg-resources"
   - "python3-setuptools"

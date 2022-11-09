@@ -2,3 +2,4 @@
 pip_install_packages:
   - name: docker
   - name: mssql-cli
+pip_executable: /usr/bin/pip3

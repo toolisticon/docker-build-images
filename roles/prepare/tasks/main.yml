@@ -33,8 +33,8 @@
 - name: Install git secret
   raw: git clone https://github.com/sobolevn/git-secret.git git-secret && cd git-secret && make build && PREFIX="/usr/local" make install
 
-- name: Bootstrap python
-  raw: test -e /usr/bin/python || (apt-get -y update && apt-get install -y python3 && update-alternatives --install /usr/bin/python python /usr/bin/python3 1)
+- name: Defaulting to python 3
+  raw: update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 
 - name: Install NodeJS LTS
   raw: curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&  apt-get install -y nodejs
