@@ -18,6 +18,11 @@ build {
     extra_arguments = ["-v"]
     playbook_file   = "ansible/openjdk11.yml"
     user            = "root"
+    ansible_env_vars = [
+      "ANSIBLE_REMOTE_TMP=/tmp/.ansible/tmp",
+      "ANSIBLE_SSH_ARGS='-oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=ssh-rsa'",
+      "ANSIBLE_HOST_KEY_CHECKING=False"
+    ]
   }
 
   post-processors {
