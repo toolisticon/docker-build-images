@@ -54,7 +54,7 @@ For building these images [Packer](https://www.packer.io/docs/builders/docker.ht
 ## Development
 
 1. Update version in `.env`
-2. Run `conventional-changelog -p angular -i CHANGELOG.md -s -r 0` and adjust changelog
+2. Run `conventional-changelog -p angular -i CHANGELOG.md -s` and adjust changelog
 3. Push changes to `develop` branch and wait for CI build
 4. Once complete, merge changes to `main`  branch and wait for CI build
 5. Once complete create a new tag: `v<VERSION>` and create a release on GitHub

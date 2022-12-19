@@ -1,3 +1,21 @@
+# [1.6.0](https://github.com/toolisticon/docker-build-images/compare/v1.5.2...v1.6.0) (2022-12-19)
+
+
+### Bug Fixes
+
+* **Mongo:** Disable Mongo for now ([3751330](https://github.com/toolisticon/docker-build-images/commit/3751330ca99ad3c602d150b33f1449f02ce6f609))
+* **NodeJS:** Drop duplicate NodeJS installation ([921ca9c](https://github.com/toolisticon/docker-build-images/commit/921ca9c4dc2382df7eb784d8f3d7884384bd4732))
+* **NodeJS:** Revert new NVM Ansible role ([e80c60f](https://github.com/toolisticon/docker-build-images/commit/e80c60f8303012ff8ea8506cac20342fa0283f83))
+* **Python:** Corrected python setup ([b820de2](https://github.com/toolisticon/docker-build-images/commit/b820de25986b12e6d8d626edcd0db325b07a012a))
+
+
+### Features
+
+* **OCI:** Adding buildah and podman support ([d1d1fbd](https://github.com/toolisticon/docker-build-images/commit/d1d1fbd13413988bc796441d35cd4b0b796fb08e))
+* Switch to native builds and drop chrome ([7d97392](https://github.com/toolisticon/docker-build-images/commit/7d973922c82b101b06d621ff6a00a394d4bd803b))
+
+
+
 ## [1.5.1](https://github.com/toolisticon/docker-build-images/compare/v1.5.1...v1.5.2) (2022-10-21)
 
 * Update yq and helmfile to latest version
