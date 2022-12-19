@@ -23,6 +23,10 @@ common_packages:
   - "unzip"
   - "vim"
   - "wget"
+  # OCI tooling, see https://danmanners.com/posts/2022-01-buildah-multi-arch/
+  - podman
+  - buildah
+  - qemu-user-static
   # Cloud Tools
   - kubectl
   - jq
