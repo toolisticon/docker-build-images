@@ -42,6 +42,7 @@ All images share common base:
 * Cloud Clients for
  * GCloud
  * Azure
+ * AWS
 * Database Clients for
   * Postgres
   * MS SQL
