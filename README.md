@@ -61,7 +61,7 @@ For building these images [Packer](https://www.packer.io/docs/builders/docker.ht
     version=$(cat config.json | grep version | cut -d ':' -f2 | tr -d '"' | tr -d ' ')
     conventional-changelog -p angular -i CHANGELOG.md -s -c config.json
     git add config.json CHANGELOG.md
-    git commit -m "Relase: Version ${version}"
+    git commit -m "Release: Version ${version}"
     ```
 2. Push changes to `develop` branch and wait for CI build
 3. Once complete, merge changes to `main`  branch and wait for CI build
