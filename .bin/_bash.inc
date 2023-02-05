@@ -1,4 +1,4 @@
-VERSION=$(cat .env | grep VERSION | cut -d '=' -f 2)
+VERSION=$(cat config.json | grep version | cut -d ':' -f2 | tr -d '"')
 export IMAGE_TAG=${1:-$VERSION}
 export MAJOR_DOCKER_TAG=`echo $IMAGE_TAG | perl -0777 -pe 's/^([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+))?(?:\+([0-9A-Za-z-]+))?/\1/'`
 export MINOR_DOCKER_TAG=`echo $IMAGE_TAG | perl -0777 -pe 's/^([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+))?(?:\+([0-9A-Za-z-]+))?/\1\.\2/'`
