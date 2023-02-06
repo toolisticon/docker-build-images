@@ -28,8 +28,13 @@ jobs:
         pip install -r requirements.txt
 
     - name: Build Base Image
-      run: |
-        .bin/build-base.sh
+      uses: nick-fields/retry@v2
+      with:
+        max_attempts: 3
+        retry_on: error
+        timeout_minutes: 10
+        command: |
+          .bin/build-base.sh
 
     - name: Save Base Image
       run: |
@@ -71,24 +76,34 @@ jobs:
         name: base-image
         path: /tmp
 
-    - name: Load Base Image
-      run: |
-        docker load --input /tmp/base-image.tar
+    - name: Load Base Image)
+      uses: nick-fields/retry@v2
+      with:
+        max_attempts: 2
+        retry_on: error
+        timeout_minutes: 5
+        command: |
+          docker load --input /tmp/base-image.tar
 
     - name: Build Image(s)
-      run: |
-        source ./.bin/_bash.inc
-        export image=${{matrix.image}}
+      uses: nick-fields/retry@v2
+      with:
+        max_attempts: 3
+        retry_on: error
+        timeout_minutes: 15
+        command: |
+          source ./.bin/_bash.inc
+          export image=${{matrix.image}}
 
-        prepareImage "${currentDir}/docker/${image}"
-        for entry in ${currentDir}/docker/${image}/*.pkr.hcl;
-        do
-          buildImage "${currentDir}/docker/${image}" "$entry"
-          imageName=$(cat "$entry" | grep 'repository' | cut -d'"' -f2)
-          fileName=$(echo "$imageName" | cut -d'/' -f2 | cut -d'-' -f1)
-          mkdir -p /tmp/docker-images/
-          docker save -o /tmp/docker-images/$fileName-image.tar $imageName
-        done
+          prepareImage "${currentDir}/docker/${image}"
+          for entry in ${currentDir}/docker/${image}/*.pkr.hcl;
+          do
+            buildImage "${currentDir}/docker/${image}" "$entry"
+            imageName=$(cat "$entry" | grep 'repository' | cut -d'"' -f2)
+            fileName=$(echo "$imageName" | cut -d'/' -f2 | cut -d'-' -f1)
+            mkdir -p /tmp/docker-images/
+            docker save -o /tmp/docker-images/$fileName-image.tar $imageName
+          done
 
     - name: Upload Image(s)
       uses: actions/upload-artifact@v2
