@@ -1,3 +1,13 @@
+## [1.7.1](https://github.com/toolisticon/docker-build-images/compare/v1.6.0...v1.7.1) (2023-03-13)
+
+
+### Features
+
+* **AWS:** Adding AWS CLI ([2b724f7](https://github.com/toolisticon/docker-build-images/commit/2b724f72e7a06575b58e4b72a16b2a59cf4f5e59))
+* **Maven:** Add Maven Installation on JDK images ([2542530](https://github.com/toolisticon/docker-build-images/commit/2542530dbe85f190c2471b5bf4f0f3b51755888c))
+
+
+
 # [1.7.0](https://github.com/toolisticon/docker-build-images/compare/v1.6.0...v1.7.0) (2023-02-05)
 
 
