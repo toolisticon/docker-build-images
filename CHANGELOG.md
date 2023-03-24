@@ -1,3 +1,12 @@
+## [1.7.2](https://github.com/toolisticon/docker-build-images/compare/v1.7.0...v1.7.2) (2023-03-24)
+
+
+### Bug Fixes
+
+* **Java:** Corrected Maven Version error ([fa62786](https://github.com/toolisticon/docker-build-images/commit/fa62786d5f33535212e1b9bff1e3867ab8eb9bc3))
+
+
+
 ## [1.7.1](https://github.com/toolisticon/docker-build-images/compare/v1.6.0...v1.7.1) (2023-03-13)
 
 
