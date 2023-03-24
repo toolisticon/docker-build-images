@@ -3,6 +3,7 @@
   hosts: all
   vars:
     - java_package: openjdk-11-jdk
+    - maven_version: 3.9.1
   pre_tasks:
     - name: Install JDK
       apt:
