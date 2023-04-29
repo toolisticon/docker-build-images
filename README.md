@@ -54,16 +54,8 @@ For building these images [Packer](https://www.packer.io/docs/builders/docker.ht
 
 ## Development
 
-1. Set new version
-    * Update version in `config.json`
-    * Create release:
-    ```bash
-    version=$(cat config.json | grep version | cut -d ':' -f2 | tr -d '"' | tr -d ' ')
-    conventional-changelog -p angular -i CHANGELOG.md -s -c config.json
-    git add config.json CHANGELOG.md
-    git commit -m "Release: Version ${version}"
-    ```
-2. Push changes to `develop` branch and wait for CI build
+1. Set new version in `config.json`
+2. Run release script: `.bin/release.sh` (Pushes the changes to `develop` branch). So wait for CI build, grab a coffee 😉
 3. Once complete, merge changes to `main`  branch and wait for CI build
 4. Once complete create a new tag: `v<VERSION>` and create a release on GitHub
 
