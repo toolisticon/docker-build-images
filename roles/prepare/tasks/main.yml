@@ -55,6 +55,9 @@
 - name: Install Kustomize
   raw: curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
 
+- name: Install vCluster CLI
+  raw: curl -L -o vcluster "https://github.com/loft-sh/vcluster/releases/latest/download/vcluster-linux-amd64" && install -c -m 0755 vcluster /usr/local/bin && rm -f vcluster
+
 - name: Install Helmfile
   raw: |
     wget -q $(curl -s https://api.github.com/repos/helmfile/helmfile/releases/latest | grep browser_download_url | grep linux_amd64 | cut -d '"' -f 4)
