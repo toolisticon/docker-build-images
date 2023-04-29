@@ -41,7 +41,7 @@ jobs:
         docker save -o /tmp/base-image.tar toolisticon/base-builder-image
 
     - name: Upload Base Image
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: base-image
         path: /tmp/base-image.tar
@@ -106,7 +106,7 @@ jobs:
           done
 
     - name: Upload Image(s)
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: docker-images-${{matrix.image}}
         path: /tmp/docker-images/
