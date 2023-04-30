@@ -1,3 +1,12 @@
+# [1.8.0](https://github.com/toolisticon/docker-build-images/compare/v1.7.2...v1.8.0) (2023-04-30)
+
+
+### Features
+
+* **vCluster:** Adding vCluster CLI ([c2ede6d](https://github.com/toolisticon/docker-build-images/commit/c2ede6d03cccd85ab67c30499758f817c63bc5d5))
+
+
+
 ## [1.7.3](https://github.com/toolisticon/docker-build-images/compare/v1.7.2...v1.7.3) (2023-04-27)
 
 
