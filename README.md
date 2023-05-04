@@ -1,6 +1,6 @@
 # docker-build-images
 
-[![Build Status](https://travis-ci.org/toolisticon/docker-build-images.svg?branch=master)](https://travis-ci.org/toolisticon/docker-build-images)
+![Build Status](https://github.com/toolisticon/docker-build-images/actions/workflows/build.yml/badge.svg)
 
 Various Docker Images for Building NodeJS, Java and Ansible artifacts
 
