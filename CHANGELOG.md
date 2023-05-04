@@ -1,3 +1,12 @@
+# [1.9.0](https://github.com/toolisticon/docker-build-images/compare/v1.8.0...v1.9.0) (2023-05-04)
+
+
+### Features
+
+* **Kubernetes:** Adding kubernetes image ([41a24b1](https://github.com/toolisticon/docker-build-images/commit/41a24b191a70e7073120f9588259402ac510e5a5))
+
+
+
 # [1.8.0](https://github.com/toolisticon/docker-build-images/compare/v1.7.2...v1.8.0) (2023-04-30)
 
 
