@@ -3,6 +3,7 @@
   hosts: all
   vars:
     - java_package: openjdk-11-jdk
+    # renovate: datasource=maven versioning=maven
     - maven_version: 3.9.1
   pre_tasks:
     - name: Install JDK
