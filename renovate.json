@@ -12,8 +12,8 @@
   ],
   "regexManagers": [
     {
-      "description": "Update version entry",
-      "fileMatch": ["*.yml"],
+      "description": "Update version entries in YAML files",
+      "fileMatch": [".*y[a]?ml$"],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>[a-z-]+?)(?: lookupName=(?<lookupName>.+?))?(?: versioning=(?<versioning>[a-z-]+?))?\\sRUN install-[a-z]+? (?<depName>[a-z-]+?) (?<currentValue>.+?)\\s"
       ],
