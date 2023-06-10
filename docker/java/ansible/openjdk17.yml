@@ -4,7 +4,7 @@
   vars:
     - java_package: openjdk-17-jdk
     # renovate: datasource=maven versioning=maven
-    - maven_version: 3.9.1
+    - maven_version: 3.9.2
   pre_tasks:
     - name: Install JDK
       apt:
