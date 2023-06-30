@@ -15,9 +15,11 @@
       "description": "Update version entries in YAML files",
       "fileMatch": [".*y[a]?ml$"],
       "matchStrings": [
-        "# renovate: datasource=(?<datasource>[a-z-]+?)(?: lookupName=(?<lookupName>.+?))?(?: versioning=(?<versioning>[a-z-]+?))?\\sRUN install-[a-z]+? (?<depName>[a-z-]+?) (?<currentValue>.+?)\\s"
+        "# renovate: datasource=(?<datasource>[a-z-]+?) depName=(?<depName>[^\\s]+?)(?: (lookupName|packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[a-z-0-9]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?\\s(?:ENV|ARG) .+?_VERSION=\"?(?<currentValue>.+?)\"?\\s"
       ],
-      "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
+      "extractVersionTemplate": "{{#if extractVersion}}{{{extractVersion}}}{{else}}^v(?<version>.*)${{/if}}"
+
     }
   ],
   "prHourlyLimit": 10
