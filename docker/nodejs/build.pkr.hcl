@@ -20,11 +20,8 @@ build {
     extra_arguments = [
       "-v",
       "--ssh-extra-args",
-      "-o IdentitiesOnly=yes -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedAlgorithms=+ssh-rsa"
-    ]
-    ansible_env_vars = [
-      "ANSIBLE_REMOTE_TMP=/tmp/.ansible/tmp",
-      "ANSIBLE_HOST_KEY_CHECKING=False"
+      "-o IdentitiesOnly=yes -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedAlgorithms=+ssh-rsa",
+      "--scp-extra-args", "'-O'"
     ]
   }
 
