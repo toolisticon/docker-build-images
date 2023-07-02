@@ -34,6 +34,7 @@ common_packages:
   # yq is installed from GitHub
   # DB Clients
   - "postgresql-client"
+  - sqlcmd
   #- "mongocli"
   #- "mongodb-database-tools"
 snap_packages:
