@@ -58,6 +58,9 @@
 - name: Install vCluster CLI
   raw: curl -L -o vcluster "https://github.com/loft-sh/vcluster/releases/latest/download/vcluster-linux-amd64" && install -c -m 0755 vcluster /usr/local/bin && rm -f vcluster
 
+- name: Install Testkube CLI
+  raw: curl -sSLf https://get.testkube.io | sh
+
 - name: Install Helmfile
   raw: |
     wget -q $(curl -s https://api.github.com/repos/helmfile/helmfile/releases/latest | grep browser_download_url | grep linux_amd64 | cut -d '"' -f 4)
