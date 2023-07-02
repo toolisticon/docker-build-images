@@ -1,5 +1,6 @@
 ---
 common_packages:
+  - "apt-utils"
   - "ca-certificates"
   - "curl"
   - "dumb-init"
@@ -7,7 +8,6 @@ common_packages:
   - "gawk"
   - "gettext"
   - "git"
-  - "google-cloud-sdk"
   - "htop"
   - "libxss1"
   - "python3"
@@ -28,13 +28,12 @@ common_packages:
   - buildah
   - qemu-user-static
   # Cloud Tools
+  - "google-cloud-sdk"
   - kubectl
   - jq
   # yq is installed from GitHub
   # DB Clients
   - "postgresql-client"
-  # Blocked by https://github.com/dbcli/mssql-cli/pull/505
-  #- "mssql-tools"
   #- "mongocli"
   #- "mongodb-database-tools"
 snap_packages:
