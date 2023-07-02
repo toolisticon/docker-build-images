@@ -6,6 +6,10 @@
     # renovate: datasource=ansible-galaxy lookupName=tecris.maven versioning=loose extractVersion=^v(?<version>\d+\.\d+\.\d+)$
     - maven_version: 3.9.3
   pre_tasks:
+    - name: Install CA
+      apt:
+        name: ca-certificates-java
+        state: latest
     - name: Install JDK
       apt:
         name: '{{ java_package }}'
