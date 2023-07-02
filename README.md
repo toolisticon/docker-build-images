@@ -41,6 +41,8 @@ All images share common base:
   * kubectl
   * helm
   * [helmfile](https://helmfile.readthedocs.io)
+  * [vCluster](https://www.vcluster.com/docs/what-are-virtual-clusters) 
+  * [Testkube](https://testkube.io/)
 * Cloud Clients for
  * GCloud
  * Azure
