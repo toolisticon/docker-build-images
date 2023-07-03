@@ -1,3 +1,25 @@
+# [1.10.0](https://github.com/toolisticon/docker-build-images/compare/v1.9.1...v1.10.0) (2023-07-03)
+
+
+### Bug Fixes
+
+* **Build:** Corrected typo ([e9b60a8](https://github.com/toolisticon/docker-build-images/commit/e9b60a89edb4cdbd6e7d53dbfc9d03a1b1962835))
+* **Build:** fix docker build error `delaying package configuration` ([6a1f04a](https://github.com/toolisticon/docker-build-images/commit/6a1f04ab835866cb434f6c153de0333fe6dd1e33))
+* **Docker:** Set correct maven version ([2f45c88](https://github.com/toolisticon/docker-build-images/commit/2f45c882fa81fcc239b6f483c0e814cc3a28df41))
+* **JDK:** Corrected APT install error ([a7d1dd4](https://github.com/toolisticon/docker-build-images/commit/a7d1dd4f1b1f4ff4bd74da0ce9979c2ae66178e1))
+* **Packer:** Corrected packer issue ([936f3c2](https://github.com/toolisticon/docker-build-images/commit/936f3c2e231a752f5d676c1c9d6b91067a57a270))
+* **Renovate:** Adjust renovate config ([53bc68b](https://github.com/toolisticon/docker-build-images/commit/53bc68b69bffce0bc63faa9dfd65a5d97af7bad3))
+* Update Maven ([f557f9a](https://github.com/toolisticon/docker-build-images/commit/f557f9a660d5af6a149be35fb9122f8535e3f223))
+
+
+### Features
+
+* **JDK:** Adding JDK 20 ([9a8e661](https://github.com/toolisticon/docker-build-images/commit/9a8e66174fea0e4db7da694980e82cf8afadecbf))
+* **Kubernetes:** Adding testkube CLI ([e571648](https://github.com/toolisticon/docker-build-images/commit/e57164814972a23aa52803ffe25506eec9f1ee01))
+* **MSSQL:** Use go version of sqlcmd ([df18dce](https://github.com/toolisticon/docker-build-images/commit/df18dce671d88304b3ed62c0982b98b6d1e56954))
+
+
+
 ## [1.9.1](https://github.com/toolisticon/docker-build-images/compare/v1.9.0...v1.9.1) (2023-05-29)
 
 
