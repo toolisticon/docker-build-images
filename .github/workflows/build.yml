@@ -121,7 +121,7 @@ jobs:
         run: |
           source ./.bin/_bash.inc
           export entry=${{matrix.image}}
-          export image=$(echo $entry | cut -d'/' -f2)
+          export image=toolisticon/${entry}
 
           docker tag ${image}:${IMAGE_TAG} ${image}:${MAJOR_DOCKER_TAG}
           docker tag ${image}:${IMAGE_TAG} ${image}:${MINOR_DOCKER_TAG}
@@ -135,7 +135,7 @@ jobs:
         run: |
           source ./.bin/_bash.inc
           export entry=${{matrix.image}}
-          export image=$(echo $entry | cut -d'/' -f2)
+          export image=toolisticon/${entry}
 
           timeStamp=$(date +%s)
           docker tag ${image}:${IMAGE_TAG} ${image}:${timeStamp}
