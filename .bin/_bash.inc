@@ -8,13 +8,11 @@ echo "Building version ${IMAGE_TAG} ... "
 currentDir=$(pwd)
 
 function prepareImage {
-  cd $1
-  ansible-galaxy install -r roles/requirements.yml -f
+  (cd ${1} && ansible-galaxy install -r roles/requirements.yml -f)
 }
 
 function buildImage {
-  cd $1
-  packer build $2
+  (cd ${1} && packer build ${2})
 }
 
 function tagImages {
