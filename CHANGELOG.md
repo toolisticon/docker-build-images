@@ -1,3 +1,12 @@
+## [1.10.1](https://github.com/toolisticon/docker-build-images/compare/v1.10.0...v1.10.1) (2023-09-24)
+
+
+### Bug Fixes
+
+* **Renovate:** Adjust renovate config to recent version ([afe5c8f](https://github.com/toolisticon/docker-build-images/commit/afe5c8f5277855cf9d3a7cea3c6d15e6024cbbc2))
+
+
+
 # [1.10.0](https://github.com/toolisticon/docker-build-images/compare/v1.9.1...v1.10.0) (2023-07-03)
 
 
