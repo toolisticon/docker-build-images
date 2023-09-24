@@ -15,6 +15,7 @@
       "description": "Update version entries in YAML files",
       "fileMatch": [".*y[a]?ml$"],
       "matchStrings": [
+        "# renovate: datasource=(?<datasource>.*) depName=(?<depName>.*)",
         "# renovate: datasource=(?<datasource>[a-z-]+?) depName=(?<depName>[^\\s]+?)(?: (lookupName|packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[a-z-0-9]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?\\s(?:ENV|ARG) .+?_VERSION=\"?(?<currentValue>.+?)\"?\\s"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",

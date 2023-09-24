@@ -3,7 +3,7 @@
   hosts: all
   vars:
     - java_package: openjdk-17-jdk
-    # renovate: datasource=ansible-galaxy lookupName=tecris.maven versioning=loose extractVersion=^v(?<version>\d+\.\d+\.\d+)$
+    # renovate: datasource=ansible-galaxy lookupName=tecris.maven
     - maven_version: 3.9.3
   pre_tasks:
     - raw: mkdir -p /etc/ssl/certs/java
