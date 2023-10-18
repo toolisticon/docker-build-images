@@ -1,3 +1,12 @@
+# [1.11.0](https://github.com/toolisticon/docker-build-images/compare/v1.10.1...v1.11.0) (2023-10-18)
+
+
+### Features
+
+* **Java:** Use JDK 21 ([68fe069](https://github.com/toolisticon/docker-build-images/commit/68fe069ccd31ac6897f14fa253947bc872b6516d))
+
+
+
 ## [1.10.1](https://github.com/toolisticon/docker-build-images/compare/v1.10.0...v1.10.1) (2023-09-24)
 
 
