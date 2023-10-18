@@ -10,7 +10,7 @@ Various Docker Images for Building NodeJS, Java and Ansible artifacts
 * Java:
   * OpenJDK 11: [![Docker Pulls](https://img.shields.io/docker/pulls/toolisticon/openjdk11-builder.svg)](https://hub.docker.com/r/toolisticon/openjdk11-builder)
   * OpenJDK 17: [![Docker Pulls](https://img.shields.io/docker/pulls/toolisticon/openjdk17-builder.svg)](https://hub.docker.com/r/toolisticon/openjdk17-builder)
-  * OpenJDK 20: [![Docker Pulls](https://img.shields.io/docker/pulls/toolisticon/openjdk20-builder.svg)](https://hub.docker.com/r/toolisticon/openjdk20-builder)
+  * OpenJDK 21: [![Docker Pulls](https://img.shields.io/docker/pulls/toolisticon/openjdk21-builder.svg)](https://hub.docker.com/r/toolisticon/openjdk21-builder)
 * NodeJS: [![Docker Pulls](https://img.shields.io/docker/pulls/toolisticon/nodejs-builder.svg)](https://hub.docker.com/r/toolisticon/nodejs-builder)
 
 > **Versioning**
@@ -41,7 +41,7 @@ All images share common base:
   * kubectl
   * helm
   * [helmfile](https://helmfile.readthedocs.io)
-  * [vCluster](https://www.vcluster.com/docs/what-are-virtual-clusters) 
+  * [vCluster](https://www.vcluster.com/docs/what-are-virtual-clusters)
   * [Testkube](https://testkube.io/)
 * Cloud Clients for
  * GCloud
