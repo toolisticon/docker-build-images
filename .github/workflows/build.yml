@@ -59,7 +59,7 @@ jobs:
             'kube',
             'java/openjdk11',
             'java/openjdk17',
-            'java/openjdk20',
+            'java/openjdk21',
             'nodejs',
             'terraform',
           ]
