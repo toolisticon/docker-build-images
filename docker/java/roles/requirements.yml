@@ -1,7 +1,7 @@
 ---
 
 - src: geerlingguy.java
-  version: "2.3.1"
+  version: "2.3.2"
 
 - src: srsp.oracle-java
   version: "3.2.0"
