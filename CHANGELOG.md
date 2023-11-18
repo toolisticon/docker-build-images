@@ -1,3 +1,7 @@
+## [1.11.1](https://github.com/toolisticon/docker-build-images/compare/v1.11.0...v1.11.1) (2023-11-18)
+
+
+
 # [1.11.0](https://github.com/toolisticon/docker-build-images/compare/v1.10.1...v1.11.0) (2023-10-18)
 
 
