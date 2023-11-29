@@ -1,11 +1,9 @@
-## [1.11.2](https://github.com/toolisticon/docker-build-images/compare/v1.10.1...v1.11.2) (2023-11-29)
+## [1.11.2](https://github.com/toolisticon/docker-build-images/compare/v1.11.1...v1.11.2) (2023-11-29)
 
 
-### Features
+### Bug Fixes
 
-* **Java:** Use JDK 21 ([25c11ce](https://github.com/toolisticon/docker-build-images/commit/25c11cef5b27a686dba65b5dcaef113a1faa3731))
-
-
+* **Build** Fix Ansible Maven role install
 
 ## [1.11.1](https://github.com/toolisticon/docker-build-images/compare/v1.11.0...v1.11.1) (2023-11-18)
 
