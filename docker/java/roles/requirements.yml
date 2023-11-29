@@ -6,5 +6,5 @@
 - src: srsp.oracle-java
   version: "3.2.0"
 
-- src: tecris.maven
-  version: "v3.9.4"
+- src: tecris.ansible-maven
+  version: "v3.9.5"
