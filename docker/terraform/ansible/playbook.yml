@@ -6,4 +6,4 @@
   roles:
     - { role: ../../roles/cleanup, tags: [ 'ansible' ], become: yes }
   tasks:
-    - include: tasks/main.yml
+    - import_tasks: tasks/main.yml
