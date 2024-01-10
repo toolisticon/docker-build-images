@@ -3,8 +3,8 @@
   hosts: all
   vars:
     - java_package: openjdk-11-jdk
-    # renovate: datasource=ansible-galaxy lookupName=tecris.ansible-maven
-    - maven_version: 3.9.4
+    # renovate: datasource=ansible-galaxy depName=tecris.ansible-maven
+    - maven_version: 3.9.6
   pre_tasks:
     - raw: mkdir -p /etc/ssl/certs/java
     - name: Install JDK
