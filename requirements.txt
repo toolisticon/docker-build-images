@@ -1,2 +1,2 @@
-ansible>=7.7.0,<7.7.1
+ansible>=9.1.0,<9.1.1
 pyyaml
