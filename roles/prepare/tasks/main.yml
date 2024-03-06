@@ -12,7 +12,8 @@
 
 - name: Adding APT Keys
   apt_key:
-    url: "{{ item }}"
+    url: "{{ item.url }}"
+    keyring: "/etc/apt/keyrings/{{ item.file_name }}"
     state: present
   with_items: '{{ apt_keys }}'
 
