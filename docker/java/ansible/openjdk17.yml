@@ -7,6 +7,10 @@
     - maven_version: 3.9.6
   pre_tasks:
     - raw: mkdir -p /etc/ssl/certs/java
+    - name: Update first
+      apt:
+        update_cache: true
+        upgrade: safe
     - name: Install CA
       apt:
         name: ca-certificates-java
