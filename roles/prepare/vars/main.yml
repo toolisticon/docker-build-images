@@ -41,14 +41,16 @@ snap_packages:
   - jq
   - yq
 apt_keys:
-  - "https://packages.cloud.google.com/apt/doc/apt-key.gpg"
-  - "https://dl-ssl.google.com/linux/linux_signing_key.pub"
-  - "https://packages.microsoft.com/keys/microsoft.asc"
+  - url: "https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key"
+    file_name: k8s.gpg
+  - url: "https://packages.cloud.google.com/apt/doc/apt-key.gpg"
+    file_name: google.gpg
+  - url: "https://packages.microsoft.com/keys/microsoft.asc"
+    file_name: microsoft.gpg
 apt_repos:
-  - "deb https://apt.kubernetes.io/ kubernetes-xenial main"
-  - "deb https://packages.cloud.google.com/apt cloud-sdk main"
-  - "deb https://packages.microsoft.com/debian/10/prod buster main"
-  - "deb https://packages.microsoft.com/debian/12/prod bookworm main"
+  - "deb [signed-by=/etc/apt/keyrings/k8s.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /"
+  - "deb [signed-by=/etc/apt/keyrings/google.gpg] https://packages.cloud.google.com/apt cloud-sdk main"
+  - "deb [signed-by=/etc/apt/keyrings/microsoft.gpg] https://packages.microsoft.com/ubuntu/20.04/prod focal main"
 helm_plugins:
   - "https://github.com/databus23/helm-diff"
   - "https://github.com/jkroepke/helm-secrets"
