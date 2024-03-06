@@ -1,3 +1,33 @@
+# [2.0.0](https://github.com/toolisticon/docker-build-images/compare/v1.11.2...v2.0.0) (2024-03-06)
+
+
+### Bug Fixes
+
+* **Image:** Use new apt-sources ([80d290e](https://github.com/toolisticon/docker-build-images/commit/80d290e296fda6ed490356fd38c1e84122747dca))
+* **JDK:** Allow unstable apt sources to allow JDK 11 ([e0145c3](https://github.com/toolisticon/docker-build-images/commit/e0145c3e19c25290e543aa5bdadf4b659a8ff3f9))
+* **Mongo:** Give version 7 with ARM/AMD64 a try ([c27417a](https://github.com/toolisticon/docker-build-images/commit/c27417a159daf441c918d97aee13df6335b52911))
+
+
+### chore
+
+* Drop not available mssql cli ([bdd1436](https://github.com/toolisticon/docker-build-images/commit/bdd1436d65bbf34b3ca7a3a0d826ff14ab236351))
+
+
+### Features
+
+* **Image:** Use Debian 12 as base image ([bc45110](https://github.com/toolisticon/docker-build-images/commit/bc45110b30e9ddc4443d117ab5cb84cf667705fe))
+* **Maven:** Update Maven to 3.9.6 ([9ac13f0](https://github.com/toolisticon/docker-build-images/commit/9ac13f0b32b92185b6c767e112dcdb412d67e3d0))
+* **NodeJS:** Use latest NodeJS via nvm as default ([c8434ed](https://github.com/toolisticon/docker-build-images/commit/c8434ed4a5e088c673645fce3a7aaf1e4b2091fe))
+* **NodeJS:** Use new APT source for NodeJS ([b1d9a15](https://github.com/toolisticon/docker-build-images/commit/b1d9a155d40a92120c78c712c808508cae4e47c0))
+
+
+### BREAKING CHANGES
+
+* mssql-cli is not available for latest python, so 
+dropping for now
+
+
+
 ## [1.11.2](https://github.com/toolisticon/docker-build-images/compare/v1.11.1...v1.11.2) (2023-11-29)
 
 
