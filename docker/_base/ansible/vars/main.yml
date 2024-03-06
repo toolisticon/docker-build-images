@@ -1,6 +1,5 @@
 ---
 pip_install_packages:
   - name: docker
-  - name: mssql-cli
   - name: awscli
 pip_executable: /usr/bin/pip3
