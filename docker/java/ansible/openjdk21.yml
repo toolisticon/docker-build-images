@@ -18,7 +18,7 @@
     - name: Install JDK
       apt: deb="/tmp/jdk.deb"
       become: true
-    - name: Delete JDK downloiad
+    - name: Delete JDK download
       ansible.builtin.file:
         state: absent
         path: /tmp/jdk.deb
